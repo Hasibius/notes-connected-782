@@ -19,7 +19,7 @@ genres = %w[Alternative Alternative\ Rock Punk Blues Bossa\ Nova
             Electronic Folk Heavy\ Metal Hip\ Hop Jazz Latin Metal Opera Pop
             R&B Rap Reggae Rock Rock\ And\ Roll Sci\ Fi\ &\ Fantasy
             Science\ Fiction Soul Soundtrack Techno TV\ Shows World\ Music
-            Instrumental K-pop].sort!
+            Instrumental K-pop].sort.uniq
 
 genres.each do |g|
   genre = Genre.new(name: g)
