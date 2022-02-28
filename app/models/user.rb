@@ -3,4 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :reviews, foreign_key: "reviewer_id", class_name: 'review'
+  has_many :artists, artist_key: "artist_id", class_name: 'review'
 end
