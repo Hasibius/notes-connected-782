@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :reviewers, foreign_key: "reviewer_id", class_name: 'review'
-  has_many :artists, artist_key: "artist_id", class_name: 'review'
+  has_many :reviewers, foreign_key: :reviewer_id, class_name: 'review'
+  has_many :artists, foreign_key: :artist_id, class_name: 'review'
 end
