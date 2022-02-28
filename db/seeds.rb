@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Seeding the database..."
+
+puts "Deleting from Genres..."
+Genre.delete_all
+puts "Done."
+
+puts "Seeding Genres..."
+
+genres = %w[Alternative Alternative\ Rock Punk Blues Bossa\ Nova
+            Classical Comedy Dance Drama Disco Dubstep Easy\ Listening
+            Electronic Folk Heavy\ Metal Hip\ Hop Jazz Latin Metal Opera Pop
+            R&B Rap Reggae Rock Rock\ And\ Roll Sci\ Fi\ &\ Fantasy
+            Science\ Fiction Soul Soundtrack Techno TV\ Shows World\ Music
+            Instrumental K-pop].sort.uniq
+
+genres.each do |g|
+  genre = Genre.new(name: g)
+  genre.save!
+end
+
+puts "Done."
