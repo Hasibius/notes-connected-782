@@ -10,5 +10,5 @@ class User < ApplicationRecord
   validates :first_name, length: { minimum: 2, maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/ }
   validates :last_name, length: { minimum: 2, maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/ }
   validates :bio, length: { maximum: 600 }
-  validates :username, presence: true, length: { minimum: 2 }, uniqueness: true, format: { with: /[\w\-@]*/ }
+  validates :username, presence: true, length: { minimum: 2, maximum: 20 }, uniqueness: true, format: { with:  /[\w\-@ ]*/ }
 end
