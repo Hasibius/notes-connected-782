@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviewers, foreign_key: :reviewer_id, class_name: 'review'
   has_many :artists, foreign_key: :artist_id, class_name: 'review'
+  has_many :attends, through: :attendances
   has_one_attached :photo
 
   validates :first_name, length: { minimum: 2, maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/ }
@@ -14,6 +15,12 @@ class User < ApplicationRecord
   validates :user_name, presence: true, length: { minimum: 2, maximum: 20 }, uniqueness: true,
                         format: { with: /[\w\-@ ]*/ }
   validate :check_photo_content_type
+
+  def attends
+    Attendance.where(user: self).map do |user_attendance|
+      user_attendance.event
+    end.uniq
+  end
 
   private
 

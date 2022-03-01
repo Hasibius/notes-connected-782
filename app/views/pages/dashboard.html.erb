@@ -1,0 +1,4 @@
+<h1>This is the dashboard</h1>
+<% current_user.attendances.each do |attendance| %>
+  <p><%= attendance.event.title %></p>
+<% end %>
