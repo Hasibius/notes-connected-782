@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 2022_02_28_163529) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "score"
+    t.bigint "reviewer_id", null: false
+    t.bigint "artist_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artist_id"], name: "index_reviews_on_artist_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -68,4 +79,6 @@ ActiveRecord::Schema.define(version: 2022_02_28_163529) do
   add_foreign_key "events", "genres"
   add_foreign_key "follows", "users", column: "artist_id"
   add_foreign_key "follows", "users", column: "follower_id"
+  add_foreign_key "reviews", "users", column: "artist_id"
+  add_foreign_key "reviews", "users", column: "reviewer_id"
 end
