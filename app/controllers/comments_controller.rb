@@ -17,13 +17,13 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       redirect_to event_path(@event), notice: 'Comment was successfully updated'
     else
-      render :edit
+      render 'events/show'
     end
   end
 
   def destroy
     @comment.destroy
-    redirect_to event_path(@event), notice: 'Comment was successfully destroyed'
+    redirect_to event_path(@event), notice: 'Comment was successfully deleted'
   end
 
   private
