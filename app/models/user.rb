@@ -12,13 +12,10 @@ class User < ApplicationRecord
   validates :last_name, length: { minimum: 2, maximum: 20 }, format: { with: /\A[a-zA-Z]+\z/ }
   validates :bio, length: { maximum: 600 }
   validates :user_name, presence: true, length: { minimum: 2, maximum: 20 }, uniqueness: true, format: { with: /[\w\-@ ]*/ }
-<<<<<<< HEAD
 
   def attends
     Attendance.where(user: self).map do |user_attendance|
       user_attendance.event
     end.uniq
   end
-=======
->>>>>>> master
 end
