@@ -1,8 +1,5 @@
 class CommentsController < ApplicationController
-  # CRUD except index & show
-  def new
-    @comment = Comment.new
-  end
+  # create, update, destroy
 
   def create
     @event = Event.find(params[:event_id])
@@ -15,8 +12,6 @@ class CommentsController < ApplicationController
       render 'events/show'
     end
   end
-
-  def edit; end
 
   def update
     if @comment.update(comment_params)
