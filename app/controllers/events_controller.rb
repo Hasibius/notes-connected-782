@@ -11,25 +11,18 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @genre = Genre.find(params[:genre_id])
+    @genre = Genre.find(params[:event][:genre_id])
     @event.genre = @genre
-    @event.user = current_user
     if @event.save
-      flash[:success] = "Your events was created."
-      redirect_path to events_path
+      redirect_to event_path(@event), notice: "Your event was created."
     else
       render :new
-      flash[:warning] = "ERROR: Your events was not created."
     end
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :date, :details)
-  end
-
-  def set_event
-    @event = Event.find(params[:id])
+    params.require(:event).permit(:title, :date, :details, :genre_id)
   end
 end
