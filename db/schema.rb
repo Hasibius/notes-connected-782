@@ -15,6 +15,14 @@ ActiveRecord::Schema.define(version: 2022_02_28_163529) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: :cascade do |t|
+    t.string "content", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_comments_on_event_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.datetime "date"
@@ -56,6 +64,7 @@ ActiveRecord::Schema.define(version: 2022_02_28_163529) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "events"
   add_foreign_key "events", "genres"
   add_foreign_key "follows", "users", column: "artist_id"
   add_foreign_key "follows", "users", column: "follower_id"
