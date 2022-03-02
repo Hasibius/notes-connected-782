@@ -94,19 +94,19 @@ puts "Successfully created the Events."
 
 # <--------------------ATTENDANCES-------------------->
 
-attendance1 = Attendance.new(user_id: 1, event_id: 5)
+attendance1 = Attendance.new(user_id: User.where(user_name: "abhijeet_clay"), event_id: Event.where(title: "BBQ @park"))
 attendance1.save!
 
-attendance2 = Attendance.new(user_id: 2, event_id: 4)
+attendance2 = Attendance.new(user_id: User.where(user_name: "nyah_schmeling"), event_id: Event.where(title: "BBQ @park"))
 attendance2.save!
 
-attendance3 = Attendance.new(user_id: 3, event_id: 3)
+attendance3 = Attendance.new(user_id: User.where(user_name: "boris_knezevic"), event_id: Event.where(title: "Beach Party"))
 attendance3.save!
 
-attendance4 = Attendance.new(user_id: 4, event_id: 2)
+attendance4 = Attendance.new(user_id: User.where(user_name: "marcel_fonseca"), event_id: Event.where(title: "Rap Party"))
 attendance4.save!
 
-attendance5 = Attendance.new(user_id: 5, event_id: 1)
+attendance5 = Attendance.new(user_id: User.where(user_name: "lu_padillas"), event_id: Event.where(title: "Tea Party"))
 attendance5.save!
 
 puts "Successfully created the Attendances."
