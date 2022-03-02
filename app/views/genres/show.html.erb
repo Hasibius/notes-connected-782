@@ -1,5 +1,5 @@
 <h1>Events for <%= @genre.name %></h1>
-<%= link_to genres_path do %>
+<%= link_to :back do %>
   <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
 <% end %>
 <% @genre.events.each do |event| %>
