@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :attendences, only: [:show, :index]
   resources :events # needs classification after we've implemented all features
   resources :genres, only: %i[index show]
+  resources :comments, only: %i[create edit update destroy]
 end

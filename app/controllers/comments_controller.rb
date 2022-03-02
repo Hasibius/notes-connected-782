@@ -13,6 +13,10 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment.user = current_user
+  end
+
   def update
     if @comment.update(comment_params)
       redirect_to event_path(@event), notice: 'Comment was successfully updated'
