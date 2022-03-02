@@ -2,6 +2,7 @@
 <%= link_to root_path do %>
   <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
 <% end %>
+<br>
 <% @events.each do |e| %>
  <p><%= e.title %></p>
 <% end %>
