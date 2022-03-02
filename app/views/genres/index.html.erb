@@ -1,0 +1,8 @@
+<h1>Find events by music Genre</h1>
+<%= link_to root_path do %>
+  <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
+<% end %>
+<br>
+<% @genres.each do |genre| %>
+  <%= link_to "#{genre.id}. #{genre.name}", genre_path(genre), class: 'btn btn-primary m-3' %>
+<% end %>

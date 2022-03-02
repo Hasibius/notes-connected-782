@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviewers, foreign_key: :reviewer_id, class_name: 'review'
   has_many :artists, foreign_key: :artist_id, class_name: 'review'
+  has_many :events
   has_many :attends, through: :attendances
   has_one_attached :photo
 

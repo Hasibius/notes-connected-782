@@ -1,0 +1,7 @@
+<h1>Events for <%= @genre.name %></h1>
+<%= link_to genres_path do %>
+  <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
+<% end %>
+<% @genre.events.each do |event| %>
+  <%= link_to "#{event.id}. #{event.title}", event_path(event), class: 'btn btn-primary m-3' %>
+<% end %>

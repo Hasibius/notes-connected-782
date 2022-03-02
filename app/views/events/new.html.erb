@@ -1,9 +1,7 @@
-<div class="container">
-  <%= simple_form_for(@event) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :date %>
-    <%= f.input :details %>
-    <%= f.association :genre, collection: Genre.all %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :details %>
+  <%= f.association :genre, collection: Genre.all %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,4 +1,15 @@
-<h1>This is the dashboard</h1>
-<% current_user.attendances.each do |attendance| %>
-  <p><%= attendance.event.title %></p>
-<% end %>
+<div class="my-3">
+  <h1><%= current_user.user_name %></h1>
+  <h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
+  <br>
+  <% if current_user.photo.key %>
+    <%= cl_image_tag(current_user.photo.key, width: 200, height: 200) %>
+  <% end %>
+  <br>
+  <br>
+  <h1>TODO: list events (past, upcoming)</h1>
+  <h2 class="">  TODO: list events(My events, attended/attending)</h2>
+  <% current_user.attends.each do |attendance| %>
+    <p><%= attendance.event.title %></p>
+  <% end %>
+</div>
