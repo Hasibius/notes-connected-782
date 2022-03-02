@@ -5,3 +5,10 @@
 <br>
 <h1><%= @event.title %></h1>
 <%= link_to "I 'm going!", '#', class: 'btn btn-primary m-3' %>
+
+<div>
+  <%= simple_form_for([@comment, @event]) do |f| %>
+    <%= f.input :details, placeholder: 'Write your comment' %>
+    <%= f.button :submit, class: 'btn-primary' %>
+  <% end %>
+</div>
