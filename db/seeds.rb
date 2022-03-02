@@ -113,24 +113,24 @@ puts "Successfully created the Attendances."
 
 # <--------------------REVIEWS-------------------->
 
-# review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer_id: 5, artist_id: 1)
-# review1.save!
+review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer: User.find_by(user_name: "abhijeet_clay"), artist: User.find_by(user_name: "boris_knezevic"))
+review1.save!
 
-# review2 = Review.new(comment: "Reprehenderit cillum non non Lorem TWO.", score: 3, reviewer_id: 4, artist_id: 2)
-# review2.save!
+review2 = Review.new(comment: "He's really nice to hear :).", score: 5, reviewer: User.find_by(user_name: "boris_knezevic"), artist: User.find_by(user_name: "marcel_fonseca"))
+review2.save!
 
-# review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer_id: 1, artist_id: 3)
-# review3.save!
+review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer: User.find_by(user_name: "lu_padillas"), artist: User.find_by(user_name: "boris_knezevic"))
+review3.save!
 
-# review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer_id: 2, artist_id: 4)
-# review4.save!
+review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer: User.find_by(user_name: "nyah_schmeling"), artist: User.find_by(user_name: "marcel_fonseca"))
+review4.save!
 
-# review5 = Review.new(comment: "Reprehenderit cillum non non Lorem FIVE.", score: 1, reviewer_id: 3, artist_id: 5)
-# review5.save!
+review5 = Review.new(comment: "He's SHIT! >:c", score: 1, reviewer: User.find_by(user_name: "marcel_fonseca"), artist: User.find_by(user_name: "boris_knezevic"))
+review5.save!
 
-# puts "Successfully created the Reviews."
+puts "Successfully created the Reviews."
 
-# # <--------------------FOLLOWS-------------------->
+# <--------------------FOLLOWS-------------------->
 
 # follow1 = Follow.new(follower_id: 1, artist_id: 2)
 # follow1.save!
