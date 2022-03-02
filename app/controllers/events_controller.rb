@@ -1,9 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
-  def show
-    @event = Event.find(params[:id])
-  end
+  def show; end
 
   def index
     @events = Event.all
@@ -25,6 +23,10 @@ class EventsController < ApplicationController
   end
 
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit(:title, :date, :details, :genre_id)
