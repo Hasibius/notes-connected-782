@@ -65,3 +65,18 @@ user5 = User.new(email: "five@email.com", password: "five@email.com", first_name
 user5.save!
 
 puts "Done."
+
+event1 = Event.new(title: "event-one", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Alternative"))
+event1.save!
+
+event2 = Event.new(title: "event-two", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Classical"))
+event2.save!
+
+event3 = Event.new(title: "event-three", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rock"))
+event3.save!
+
+event4 = Event.new(title: "event-four", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rap"))
+event4.save!
+
+event5 = Event.new(title: "event-five", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Blues"))
+event5.save!
