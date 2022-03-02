@@ -94,19 +94,19 @@ puts "Successfully created the Events."
 
 # <--------------------ATTENDANCES-------------------->
 
-attendance1 = Attendance.new(user_id: User.where(user_name: "abhijeet_clay"), event_id: Event.where(title: "BBQ @park"))
+attendance1 = Attendance.new(user: User.find_by(user_name: "abhijeet_clay"), event: Event.find_by(title: "BBQ @park"))
 attendance1.save!
 
-attendance2 = Attendance.new(user_id: User.where(user_name: "nyah_schmeling"), event_id: Event.where(title: "BBQ @park"))
+attendance2 = Attendance.new(user: User.find_by(user_name: "nyah_schmeling"), event: Event.find_by(title: "BBQ @park"))
 attendance2.save!
 
-attendance3 = Attendance.new(user_id: User.where(user_name: "boris_knezevic"), event_id: Event.where(title: "Beach Party"))
+attendance3 = Attendance.new(user: User.find_by(user_name: "boris_knezevic"), event: Event.find_by(title: "Beach Party"))
 attendance3.save!
 
-attendance4 = Attendance.new(user_id: User.where(user_name: "marcel_fonseca"), event_id: Event.where(title: "Rap Party"))
+attendance4 = Attendance.new(user: User.find_by(user_name: "marcel_fonseca"), event: Event.find_by(title: "Rap Party"))
 attendance4.save!
 
-attendance5 = Attendance.new(user_id: User.where(user_name: "lu_padillas"), event_id: Event.where(title: "Tea Party"))
+attendance5 = Attendance.new(user: User.find_by(user_name: "lu_padillas"), event: Event.find_by(title: "Tea Party"))
 attendance5.save!
 
 puts "Successfully created the Attendances."
