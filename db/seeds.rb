@@ -8,14 +8,11 @@
 
 puts "Deleting database..."
 
-Genre.delete_all
-puts "Deleted Genre"
+Comment.delete_all
+puts "Deleted Comments"
 
 Attendance.delete_all
 puts "Deleted Attendance"
-
-Event.delete_all
-puts "Deleted Event"
 
 Review.delete_all
 puts "Deleted Review"
@@ -23,8 +20,11 @@ puts "Deleted Review"
 Follow.delete_all
 puts "Deleted Follow"
 
-Comment.delete_all
-puts "Deleted Comments"
+Event.delete_all
+puts "Deleted Event"
+
+Genre.delete_all
+puts "Deleted Genre"
 
 User.delete_all
 puts "Deleted Users"
