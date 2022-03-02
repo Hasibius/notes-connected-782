@@ -9,12 +9,20 @@
 puts "Deleting database..."
 
 Genre.delete_all
+puts "Deleted Genre"
 Attendance.delete_all
+puts "Deleted Attendance"
+
 Event.delete_all
+puts "Deleted Event"
 Review.delete_all
+puts "Deleted Review"
 Follow.delete_all
+puts "Deleted Follow"
 Comment.delete_all
+puts "Deleted Comments"
 User.delete_all
+puts "Deleted Users"
 
 puts "Seeding database"
 
@@ -33,27 +41,27 @@ puts "Done."
 
 # <--------------------USERS-------------------->
 
-user1 = User.new(email: "one@email.com", password: "one@email.com", first_name: "user", last_name: "one", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "one")
+user1 = User.new(email: "abhijeet@email.com", password: "abhijeet@email.com", first_name: "Abhijeet", last_name: "Clay", bio: "Esse eu nulla sunt tempor.", user_name: "abhijeet_clay")
 # downloaded_image = URI.open("#")
 # user1.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user1.save!
 
-user2 = User.new(email: "two@email.com", password: "two@email.com", first_name: "user", last_name: "two", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "two")
+user2 = User.new(email: "nyah@email.com", password: "nyah@email.com", first_name: "Nyah", last_name: "Schmeling", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "nyah_schmeling")
 # downloaded_image = URI.open("#")
 # user2.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user2.save!
 
-user3 = User.new(email: "three@email.com", password: "three@email.com", first_name: "user", last_name: "three", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "three")
+user3 = User.new(email: "boris_Knezevic@email.com", password: "boris_Knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "boris_knezevic")
 # downloaded_image = URI.open("#")
 # user3.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user3.save!
 
-user4 = User.new(email: "four@email.com", password: "four@email.com", first_name: "user", last_name: "four", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "four")
+user4 = User.new(email: "marcel_Fonseca@email.com", password: "marcel_Fonseca@email.com", first_name: "Marcel", last_name: "Fonseca", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "marcel_fonseca")
 # downloaded_image = URI.open("#")
 # user4.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user4.save!
 
-user5 = User.new(email: "five@email.com", password: "five@email.com", first_name: "user", last_name: "five", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "five")
+user5 = User.new(email: "lu_padillas@email.com", password: "lu_padillas@email.com", first_name: "Lu", last_name: "Padillas", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "lu_padillas")
 # downloaded_image = URI.open("#")
 # user5.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user5.save!
@@ -146,4 +154,3 @@ comment4.save!
 
 comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
 comment5.save!
-
