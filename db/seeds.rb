@@ -8,6 +8,10 @@
 
 puts "Seeding the database..."
 
+puts "Deleting attendances"
+Attendance.delete_all
+puts "Done."
+
 puts "Deleting from Genres..."
 Genre.delete_all
 puts "Done."
@@ -39,6 +43,8 @@ genres.each do |g|
 end
 puts "Done."
 
+# <------------- USERS-------------------->
+
 user1 = User.new(email: "one@email.com", password: "one@email.com", first_name: "user", last_name: "one", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "one")
 # downloaded_image = URI.open("#")
 # user1.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
@@ -66,6 +72,8 @@ user5.save!
 
 puts "Done."
 
+# <------------- EVENTS-------------------->
+
 event1 = Event.new(title: "event-one", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Alternative"))
 event1.save!
 
@@ -80,3 +88,24 @@ event4.save!
 
 event5 = Event.new(title: "event-five", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Blues"))
 event5.save!
+
+puts "Done."
+
+# <------------- ATTENDANCES-------------------->
+
+attendance1 = Attendance.new(user_id: 1, event_id: 5)
+attendance1.save!
+
+attendance2 = Attendance.new(user_id: 2, event_id: 4)
+attendance2.save!
+
+attendance3 = Attendance.new(user_id: 3, event_id: 3)
+attendance3.save!
+
+attendance4 = Attendance.new(user_id: 4, event_id: 2)
+attendance4.save!
+
+attendance5 = Attendance.new(user_id: 5, event_id: 1)
+attendance5.save!
+
+puts "Done."
