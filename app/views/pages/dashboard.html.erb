@@ -9,7 +9,9 @@
   <br>
   <h1>TODO: list events (past, upcoming)</h1>
   <h2 class="">  TODO: list events(My events, attended/attending)</h2>
+  <br><br><br>
+  <h3>My Events</h3>
   <% current_user.attends.each do |attendance| %>
-    <p><%= attendance.event.title %></p>
+    <p><%= attendance.title %></p>
   <% end %>
 </div>
