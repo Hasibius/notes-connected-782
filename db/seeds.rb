@@ -58,7 +58,6 @@ user5 = User.new(email: "five@email.com", password: "five@email.com", first_name
 # user5.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user5.save!
 
-puts "Done."
 
 # <--------------------EVENTS-------------------->
 
@@ -77,7 +76,6 @@ event4.save!
 event5 = Event.new(title: "event-five", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Blues"))
 event5.save!
 
-puts "Done."
 
 # <--------------------ATTENDANCES-------------------->
 
@@ -96,7 +94,6 @@ attendance4.save!
 attendance5 = Attendance.new(user_id: 5, event_id: 1)
 attendance5.save!
 
-puts "Done."
 
 # <--------------------REVIEWS-------------------->
 
@@ -132,7 +129,6 @@ follow4.save!
 follow5 = Follow.new(follower_id: 5, artist_id: 3)
 follow5.save!
 
-puts "Done."
 
 # <--------------------COMMENTS-------------------->
 
@@ -151,4 +147,3 @@ comment4.save!
 comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
 comment5.save!
 
-puts "Done."
