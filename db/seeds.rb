@@ -10,17 +10,22 @@ puts "Deleting database..."
 
 Genre.delete_all
 puts "Deleted Genre"
+
 Attendance.delete_all
 puts "Deleted Attendance"
 
 Event.delete_all
 puts "Deleted Event"
+
 Review.delete_all
 puts "Deleted Review"
+
 Follow.delete_all
 puts "Deleted Follow"
+
 Comment.delete_all
 puts "Deleted Comments"
+
 User.delete_all
 puts "Deleted Users"
 
@@ -51,12 +56,12 @@ user2 = User.new(email: "nyah@email.com", password: "nyah@email.com", first_name
 # user2.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user2.save!
 
-user3 = User.new(email: "boris_Knezevic@email.com", password: "boris_Knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "boris_knezevic")
+user3 = User.new(email: "boris_knezevic@email.com", password: "boris_knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "boris_knezevic")
 # downloaded_image = URI.open("#")
 # user3.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user3.save!
 
-user4 = User.new(email: "marcel_Fonseca@email.com", password: "marcel_Fonseca@email.com", first_name: "Marcel", last_name: "Fonseca", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "marcel_fonseca")
+user4 = User.new(email: "marcel_fonseca@email.com", password: "marcel_fonseca@email.com", first_name: "Marcel", last_name: "Fonseca", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "marcel_fonseca")
 # downloaded_image = URI.open("#")
 # user4.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user4.save!
@@ -66,24 +71,26 @@ user5 = User.new(email: "lu_padillas@email.com", password: "lu_padillas@email.co
 # user5.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
 user5.save!
 
+puts "Successfully created the Users."
 
 # <--------------------EVENTS-------------------->
 
-event1 = Event.new(title: "event-one", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Alternative"))
+event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Alternative"))
 event1.save!
 
-event2 = Event.new(title: "event-two", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Classical"))
+event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rock"))
 event2.save!
 
-event3 = Event.new(title: "event-three", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rock"))
+event3 = Event.new(title: "Tea Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Classical"))
 event3.save!
 
-event4 = Event.new(title: "event-four", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rap"))
+event4 = Event.new(title: "Rap Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Rap"))
 event4.save!
 
-event5 = Event.new(title: "event-five", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Blues"))
+event5 = Event.new(title: "Philanthropic consert for the Ukranian people", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Folk"))
 event5.save!
 
+puts "Successfully created the Events."
 
 # <--------------------ATTENDANCES-------------------->
 
@@ -102,55 +109,61 @@ attendance4.save!
 attendance5 = Attendance.new(user_id: 5, event_id: 1)
 attendance5.save!
 
+puts "Successfully created the Attendances."
 
 # <--------------------REVIEWS-------------------->
 
-review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer_id: 5, artist_id: 1)
-review1.save!
+# review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer_id: 5, artist_id: 1)
+# review1.save!
 
-review2 = Review.new(comment: "Reprehenderit cillum non non Lorem TWO.", score: 3, reviewer_id: 4, artist_id: 2)
-review2.save!
+# review2 = Review.new(comment: "Reprehenderit cillum non non Lorem TWO.", score: 3, reviewer_id: 4, artist_id: 2)
+# review2.save!
 
-review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer_id: 1, artist_id: 3)
-review3.save!
+# review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer_id: 1, artist_id: 3)
+# review3.save!
 
-review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer_id: 2, artist_id: 4)
-review4.save!
+# review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer_id: 2, artist_id: 4)
+# review4.save!
 
-review5 = Review.new(comment: "Reprehenderit cillum non non Lorem FIVE.", score: 1, reviewer_id: 3, artist_id: 5)
-review5.save!
+# review5 = Review.new(comment: "Reprehenderit cillum non non Lorem FIVE.", score: 1, reviewer_id: 3, artist_id: 5)
+# review5.save!
 
-# <--------------------FOLLOWS-------------------->
+# puts "Successfully created the Reviews."
 
-follow1 = Follow.new(follower_id: 1, artist_id: 2)
-follow1.save!
+# # <--------------------FOLLOWS-------------------->
 
-follow2 = Follow.new(follower_id: 2, artist_id: 1)
-follow2.save!
+# follow1 = Follow.new(follower_id: 1, artist_id: 2)
+# follow1.save!
 
-follow3 = Follow.new(follower_id: 3, artist_id: 5)
-follow3.save!
+# follow2 = Follow.new(follower_id: 2, artist_id: 1)
+# follow2.save!
 
-follow4 = Follow.new(follower_id: 4, artist_id: 4)
-follow4.save!
+# follow3 = Follow.new(follower_id: 3, artist_id: 5)
+# follow3.save!
 
-follow5 = Follow.new(follower_id: 5, artist_id: 3)
-follow5.save!
+# follow4 = Follow.new(follower_id: 4, artist_id: 4)
+# follow4.save!
 
+# follow5 = Follow.new(follower_id: 5, artist_id: 3)
+# follow5.save!
 
-# <--------------------COMMENTS-------------------->
+# puts "Successfully created the Follows."
 
-comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 1, event_id: 5)
-comment1.save!
+# # <--------------------COMMENTS-------------------->
 
-comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 2, event_id: 3)
-comment2.save!
+# comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 1, event_id: 5)
+# comment1.save!
 
-comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 3, event_id: 4)
-comment3.save!
+# comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 2, event_id: 3)
+# comment2.save!
 
-comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 4, event_id: 2)
-comment4.save!
+# comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 3, event_id: 4)
+# comment3.save!
 
-comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
-comment5.save!
+# comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 4, event_id: 2)
+# comment4.save!
+
+# comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
+# comment5.save!
+
+# puts "Successfully created the Comments."
