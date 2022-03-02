@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @genre = Genre.find(params[:event][:genre_id])
     @event.genre = @genre
+    @user = current_user
     if @event.save
       redirect_to event_path(@event), notice: "Your event was created."
     else
@@ -29,6 +30,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :date, :details, :genre_id)
+    params.require(:event).permit(:title, :date, :details, :genre_id, :user_id)
   end
 end
