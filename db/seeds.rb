@@ -13,7 +13,7 @@ Attendance.delete_all
 Event.delete_all
 Review.delete_all
 Follow.delete_all
-Comment.delete.all
+Comment.delete_all
 User.delete_all
 
 puts "Seeding database"
@@ -84,7 +84,7 @@ puts "Done."
 attendance1 = Attendance.new(user_id: 1, event_id: 5)
 attendance1.save!
 
-attendance2 = Attendance.new(user_id: 2, event_id: 5)
+attendance2 = Attendance.new(user_id: 2, event_id: 4)
 attendance2.save!
 
 attendance3 = Attendance.new(user_id: 3, event_id: 3)
@@ -123,7 +123,7 @@ follow1.save!
 follow2 = Follow.new(follower_id: 2, artist_id: 1)
 follow2.save!
 
-follow3 = Follow.new(follower_id: 3, artist_id: 2)
+follow3 = Follow.new(follower_id: 3, artist_id: 5)
 follow3.save!
 
 follow4 = Follow.new(follower_id: 4, artist_id: 4)
@@ -131,6 +131,8 @@ follow4.save!
 
 follow5 = Follow.new(follower_id: 5, artist_id: 3)
 follow5.save!
+
+puts "Done."
 
 # <--------------------COMMENTS-------------------->
 
@@ -148,3 +150,5 @@ comment4.save!
 
 comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
 comment5.save!
+
+puts "Done."
