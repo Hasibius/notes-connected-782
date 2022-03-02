@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
-  belongs_to :genre
-  belongs_to :user
+  belongs_to :genre, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 
   validates :title, length: { minimum: 4, maximum: 100 }, presence: true
   validates :date, presence: true
