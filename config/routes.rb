@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get "dashboard/:id", to: "pages#dashboard", as: :dashboard
   resources :attendences, only: [:show, :index]
-  resources :events # needs classification after we've implemented all features
+  resources :events, only: %i[show index create destroy]
   resources :genres, only: %i[index show]
   resources :comments, only: %i[create edit update destroy]
 end
