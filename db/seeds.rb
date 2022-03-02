@@ -151,19 +151,19 @@ puts "Successfully created the Follows."
 
 # <--------------------COMMENTS-------------------->
 
-# comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 1, event_id: 5)
-# comment1.save!
+comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "abhijeet_clay"), event: Event.find_by(title: "Tea Party"))
+comment1.save!
 
-# comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 2, event_id: 3)
-# comment2.save!
+comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "boris_knezevic"), event: Event.find_by(title: "BBQ @park"))
+comment2.save!
 
-# comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 3, event_id: 4)
-# comment3.save!
+comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "lu_padillas"), event: Event.find_by(title: "Rap Party"))
+comment3.save!
 
-# comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 4, event_id: 2)
-# comment4.save!
+comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "nyah_schmeling"), event: Event.find_by(title: "BBQ @park"))
+comment4.save!
 
-# comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
-# comment5.save!
+comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "marcel_fonseca"), event: Event.find_by(title: "BBQ @park"))
+comment5.save!
 
-# puts "Successfully created the Comments."
+puts "Successfully created the Comments."
