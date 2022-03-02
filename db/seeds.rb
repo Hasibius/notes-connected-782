@@ -132,24 +132,24 @@ puts "Successfully created the Reviews."
 
 # <--------------------FOLLOWS-------------------->
 
-# follow1 = Follow.new(follower_id: 1, artist_id: 2)
-# follow1.save!
+follow1 = Follow.new(follower: User.find_by(user_name: "abhijeet_clay"), artist: User.find_by(user_name: "boris_knezevic"))
+follow1.save!
 
-# follow2 = Follow.new(follower_id: 2, artist_id: 1)
-# follow2.save!
+follow2 = Follow.new(follower: User.find_by(user_name: "boris_knezevic"), artist: User.find_by(user_name: "marcel_fonseca"))
+follow2.save!
 
-# follow3 = Follow.new(follower_id: 3, artist_id: 5)
-# follow3.save!
+follow3 = Follow.new(follower: User.find_by(user_name: "lu_padillas"), artist: User.find_by(user_name: "boris_knezevic"))
+follow3.save!
 
-# follow4 = Follow.new(follower_id: 4, artist_id: 4)
-# follow4.save!
+follow4 = Follow.new(follower: User.find_by(user_name: "nyah_schmeling"), artist: User.find_by(user_name: "boris_knezevic"))
+follow4.save!
 
-# follow5 = Follow.new(follower_id: 5, artist_id: 3)
-# follow5.save!
+follow5 = Follow.new(follower: User.find_by(user_name: "marcel_fonseca"), artist: User.find_by(user_name: "boris_knezevic"))
+follow5.save!
 
-# puts "Successfully created the Follows."
+puts "Successfully created the Follows."
 
-# # <--------------------COMMENTS-------------------->
+# <--------------------COMMENTS-------------------->
 
 # comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 1, event_id: 5)
 # comment1.save!
