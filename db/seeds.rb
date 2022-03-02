@@ -43,7 +43,7 @@ genres.each do |g|
 end
 puts "Done."
 
-# <------------- USERS-------------------->
+# <--------------------USERS-------------------->
 
 user1 = User.new(email: "one@email.com", password: "one@email.com", first_name: "user", last_name: "one", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "one")
 # downloaded_image = URI.open("#")
@@ -72,7 +72,7 @@ user5.save!
 
 puts "Done."
 
-# <------------- EVENTS-------------------->
+# <--------------------EVENTS-------------------->
 
 event1 = Event.new(title: "event-one", date: Date.new, details: "Est ullamco pariatur quis ipsum.", genre: Genre.find_by(name: "Alternative"))
 event1.save!
@@ -91,7 +91,7 @@ event5.save!
 
 puts "Done."
 
-# <------------- ATTENDANCES-------------------->
+# <--------------------ATTENDANCES-------------------->
 
 attendance1 = Attendance.new(user_id: 1, event_id: 5)
 attendance1.save!
@@ -109,3 +109,54 @@ attendance5 = Attendance.new(user_id: 5, event_id: 1)
 attendance5.save!
 
 puts "Done."
+
+# <--------------------REVIEWS-------------------->
+
+review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer_id: 5, artist_id: 1)
+review1.save!
+
+review2 = Review.new(comment: "Reprehenderit cillum non non Lorem TWO.", score: 3, reviewer_id: 4, artist_id: 2)
+review2.save!
+
+review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer_id: 1, artist_id: 3)
+review3.save!
+
+review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer_id: 2, artist_id: 4)
+review4.save!
+
+review5 = Review.new(comment: "Reprehenderit cillum non non Lorem FIVE.", score: 1, reviewer_id: 3, artist_id: 5)
+review5.save!
+
+# <--------------------FOLLOWS-------------------->
+
+follow1 = Follow.new(follower_id: 1, artist_id: 2)
+follow1.save!
+
+follow2 = Follow.new(follower_id: 2, artist_id: 1)
+follow2.save!
+
+follow3 = Follow.new(follower_id: 3, artist_id: 5)
+follow3.save!
+
+follow4 = Follow.new(follower_id: 4, artist_id: 4)
+follow4.save!
+
+follow5 = Follow.new(follower_id: 5, artist_id: 3)
+follow5.save!
+
+# <--------------------COMMENTS-------------------->
+
+comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 1, event_id: 5)
+comment1.save!
+
+comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 2, event_id: 3)
+comment2.save!
+
+comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 3, event_id: 4)
+comment3.save!
+
+comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 4, event_id: 2)
+comment4.save!
+
+comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user_id: 5, event_id: 1)
+comment5.save!
