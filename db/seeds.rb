@@ -6,29 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Seeding the database..."
+puts "Deleting database..."
 
-puts "Deleting attendances"
-Attendance.delete_all
-puts "Done."
-
-puts "Deleting from Genres..."
 Genre.delete_all
-puts "Done."
-
-puts "Seeding Genres..."
-
-puts "Deleting events"
+Attendance.delete_all
 Event.delete_all
-puts "Done"
-
-puts "Seeding events"
-
-puts "Deleting users"
+Review.delete_all
+Follow.delete_all
+Comment.delete.all
 User.delete_all
-puts "Done"
 
-puts "Seeding users"
+puts "Seeding database"
 
 genres = %w[Alternative Alternative\ Rock Punk Blues Bossa\ Nova
             Classical Comedy Dance Drama Disco Dubstep Easy\ Listening
@@ -96,7 +84,7 @@ puts "Done."
 attendance1 = Attendance.new(user_id: 1, event_id: 5)
 attendance1.save!
 
-attendance2 = Attendance.new(user_id: 2, event_id: 4)
+attendance2 = Attendance.new(user_id: 2, event_id: 5)
 attendance2.save!
 
 attendance3 = Attendance.new(user_id: 3, event_id: 3)
@@ -135,7 +123,7 @@ follow1.save!
 follow2 = Follow.new(follower_id: 2, artist_id: 1)
 follow2.save!
 
-follow3 = Follow.new(follower_id: 3, artist_id: 5)
+follow3 = Follow.new(follower_id: 3, artist_id: 2)
 follow3.save!
 
 follow4 = Follow.new(follower_id: 4, artist_id: 4)
