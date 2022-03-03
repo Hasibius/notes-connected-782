@@ -75,19 +75,19 @@ puts "Successfully created the Users."
 
 # <--------------------EVENTS-------------------->
 
-event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Alternative"), address: "16 Villa Gaudelet, Paris")
+event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Alternative"), address: "Heßstraße 132, München")
 event1.save!
 
-event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock"), address: "16 Villa Gaudelet, Paris")
+event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock"), address: "Balanstraße 73, München")
 event2.save!
 
-event3 = Event.new(title: "Tea Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "marcel_fonseca"), genre: Genre.find_by(name: "Classical"), address: "16 Villa Gaudelet, Paris")
+event3 = Event.new(title: "Tea Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "marcel_fonseca"), genre: Genre.find_by(name: "Classical"), address: "Zellstr 4, München")
 event3.save!
 
-event4 = Event.new(title: "Rap Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "nyah_schmeling"), genre: Genre.find_by(name: "Rap"), address: "16 Villa Gaudelet, Paris")
+event4 = Event.new(title: "Rap Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "nyah_schmeling"), genre: Genre.find_by(name: "Rap"), address: "Lenbachplatz 1, München")
 event4.save!
 
-event5 = Event.new(title: "Philanthropic consert for the Ukranian people", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Folk"), address: "16 Villa Gaudelet, Paris")
+event5 = Event.new(title: "Philanthropic concert for the Ukranian people", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Folk"), address: "Dachauer Straße 114, München")
 event5.save!
 
 puts "Successfully created the Events."
