@@ -1,6 +1,12 @@
+#card-container{
+  display: flex;
+  position: absolute;
+  // justify-content: center;
+}
+
 .row {
   margin-top: 10px;
-  position: absolute;
+  position: inherit;
   display: grid;
   justify-content: center;
 }
