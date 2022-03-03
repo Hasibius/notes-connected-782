@@ -1,61 +1,19 @@
-<%# <div class="container" id="card-container"> %>
-<%# <div class="container" id="card-container"> %>
+<div class="container">
   <div class="row" id="card-row">
     <div class="col-3">
       <div class="card-product">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
         <div class="card-product-infos">
-          <a id="date"><%= Date.new  %></a>
-          <h2>TITLe</h2>
+          <a id="date"><%= Event.first.date %></a>
+          <h2><%= %></h2>
           <div id="location">
             <a><i class="fas fa-map-marker-alt"></i> Location </a>
 
-            <i class="fas fa-thin fa-user"></i>
+            <a><i class="fas fa-thin fa-user"></i>#</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-3">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <a id="date"><%= Date.new  %></a>
-          <h2>Buddy up for 🤘🎸!</h2>
-          <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> Location </a>
-
-            <i class="fas fa-thin fa-user"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <a id="date"><%= Date.new  %></a>
-          <h2>Buddy up for 🤘🎸!</h2>
-          <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> Location </a>
-
-            <i class="fas fa-thin fa-user"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <a id="date"><%= Date.new  %></a>
-          <h2>Buddy up for 🤘🎸!</h2>
-          <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> Location </a>
-
-            <i class="fas fa-thin fa-user"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </div>
-<%# </div> %>
+</div>
