@@ -104,7 +104,7 @@ puts "Done seeding Users."
 # article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 puts 'Seeding Events...'
-event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Alternative"))
+event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Alternative"), address: "Heßstraße 132, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/bbq-01_x1vp4c.jpg'
 file = URI.open(url)
 event1.photo.attach(io: file, filename: 'bbq-01_x1vp4c.jpg', content_type: 'image/jpg')
@@ -112,28 +112,28 @@ puts "|#{url}| ✅"
 event1.save!
 
 
-event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock"))
+event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock"), address: "Balanstraße 73, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/beach-01_dszaqn.jpg'
 file = URI.open(url)
 event2.photo.attach(io: file, filename: 'beach-01_dszaqn.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
 event2.save!
 
-event3 = Event.new(title: "Classical Music Event", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "marcel_fonseca"), genre: Genre.find_by(name: "Classical"))
+event3 = Event.new(title: "Classical Music Event", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "marcel_fonseca"), genre: Genre.find_by(name: "Classical"), address: "Zellstr 4, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/classical-01_x3jjmn.jpg'
 file = URI.open(url)
 event3.photo.attach(io: file, filename: 'classical-01_x3jjmn.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
 event3.save!
 
-event4 = Event.new(title: "90's Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "nyah_schmeling"), genre: Genre.find_by(name: "Disco"))
+event4 = Event.new(title: "90's Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "nyah_schmeling"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/90s-01_yfhhlz.jpg'
 file = URI.open(url)
 event4.photo.attach(io: file, filename: '90s-01_yfhhlz.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
 event4.save!
 
-event5 = Event.new(title: "Rock 'n' Roll Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock\ And\ Roll"))
+event5 = Event.new(title: "Rock 'n' Roll Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock\ And\ Roll"), address: "Dachauer Straße 114, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/rock-n-roll-01_xotqod.jpg'
 file = URI.open(url)
 event5.photo.attach(io: file, filename: 'rock-n-roll-01_xotqod.jpg', content_type: 'image/jpg')
