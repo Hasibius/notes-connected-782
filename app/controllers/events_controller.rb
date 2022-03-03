@@ -2,12 +2,12 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
   def show
-    # @markers = @events.geocoded.map do |e|
-    #   {
-    #     lat: e.latitude,
-    #     lng: e.longitude
-    #   }
-    # end
+    @markers =
+      [{
+        lat: @event.latitude,
+        lng: @event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: @event })
+      }]
   end
 
   def index
@@ -15,7 +15,8 @@ class EventsController < ApplicationController
     @markers = @events.geocoded.map do |e|
       {
         lat: e.latitude,
-        lng: e.longitude
+        lng: e.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: e })
       }
     end
   end
