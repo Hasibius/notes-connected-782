@@ -1,0 +1,54 @@
+a {
+  text-decoration: none;
+  color: $blue;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: $dark-blue;
+  }
+}
+
+.primary-button {
+  position: relative;
+  color: $light-white;
+  background: linear-gradient(180deg, $blue 0%, $dark-blue 100%);
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.6em 0.7em 0.6em 0.7em;
+  z-index: 1;
+  &::before {
+    border-radius: 10px;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, $blue 0%, $blue 100%);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+  &:hover {
+    color: $light-white;
+  }
+}
+
+.secondary-button {
+  border: 1px solid $blue;
+  color: $blue;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.6em 0.7em 0.6em 0.7em;
+  transition: all 0.5s ease-in-out;
+  background: $very-light-blue;
+  &:hover {
+    border: 1px solid $dark-blue;
+    background: $very-light-blue;
+    color: $blue;
+    text-shadow: 0px 0px 0.3px rgba($blue, 0.7);
+  }
+}
