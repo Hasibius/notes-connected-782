@@ -1,4 +1,10 @@
+#container1{
+  margin-top: 20px; //distance between Suggestion and lines above in homepage
+}
 
+#container2{
+  margin-top: 20px; // distance between Categories and Suggestion bar
+}
 #card-row {
   margin-top: 20px;
   position: inherit;
@@ -34,7 +40,6 @@
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
-  /* identical to box height */
   color: #000000;
 }
 
@@ -70,4 +75,43 @@
 #location {
   display: flex;
   justify-content: space-between;
+
 }
+
+#rectangle1 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.25);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle2 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle3 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle4 img {
+  position: inherit;
+  height: 150px;
+  width: 100%;
+
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  }
+
+  .row1 {
+    position: relative;
+    display: flex;
+  }
