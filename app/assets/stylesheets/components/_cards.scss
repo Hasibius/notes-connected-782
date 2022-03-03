@@ -1,14 +1,6 @@
-#card-container{
-  display: flex;
-  position: absolute;
-  // justify-content: center;
-}
-
-.row {
-  margin-top: 10px;
+#card-row {
+  margin-top: 20px;
   position: inherit;
-  display: grid;
-  justify-content: center;
 }
 
 .card-product {
@@ -17,7 +9,7 @@
   left: 120px;
   top: 619px;
   border-radius: 0px;
-  position: relative;
+  position: inherit;
 }
 
 .card-product img {
