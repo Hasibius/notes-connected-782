@@ -3,9 +3,9 @@
   display: grid;
 }
 
-// #container2{
-//   margin-top: 20px; // distance between Categories and Suggestion bar
-// }
+#container2{
+  margin-top: 20px; // distance between Categories and Suggestion bar
+}
 #card-row {
   margin-top: 20px;
   position: inherit;
@@ -18,6 +18,7 @@
   top: 619px;
   border-radius: 0px;
   position: inherit;
+  margin: 5px;
 }
 
 .card-product img {
