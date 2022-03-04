@@ -1,10 +1,11 @@
-#container1{
+.container1{
   margin-top: 20px; //distance between Suggestion and lines above in homepage
+  display: grid;
 }
 
-#container2{
-  margin-top: 20px; // distance between Categories and Suggestion bar
-}
+// #container2{
+//   margin-top: 20px; // distance between Categories and Suggestion bar
+// }
 #card-row {
   margin-top: 20px;
   position: inherit;
