@@ -9,8 +9,7 @@ class EventsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { event: @event })
       }]
     # does the user already attend to this event
-    attends = Attendance.where(user_id: current_user.id, event_id: @event.id)
-    @clicked = attends.any? # ? false : true
+    @clicked = Attendance.where(user_id: current_user.id, event_id: @event.id).any?
   end
 
   def index
