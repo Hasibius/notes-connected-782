@@ -1,13 +1,17 @@
-<h1>Events page index - placeholder ofc</h1>
-<%= link_to :back do %>
-  <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
-<% end %>
-<br>
-<% @events.each do |e| %>
- <p><%= e.title %></p>
-<% end %>
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+  <h1>Events page index - placeholder ofc</h1>
+  <%= link_to :back do %>
+    <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
+  <% end %>
+  <br>
+  <% @events.each do |e| %>
+    <%= link_to e.title, event_path(e), class: 'primary-button' %>
+    <br><br>
+  <% end %>
+
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>

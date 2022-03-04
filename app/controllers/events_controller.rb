@@ -8,6 +8,8 @@ class EventsController < ApplicationController
         lng: @event.longitude,
         info_window: render_to_string(partial: "info_window", locals: { event: @event })
       }]
+    # does the user already attend to this event
+    @clicked = Attendance.where(user_id: current_user.id, event_id: @event.id).any?
   end
 
   def index
@@ -44,6 +46,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :date, :details, :genre_id, :user_id)
+    params.require(:event).permit(:title, :date, :details, :genre_id, :user_id, :address, :photo)
   end
 end

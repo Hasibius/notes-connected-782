@@ -1,12 +1,32 @@
-<%= link_to :back do %>
-  <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
-<% end %>
+<div class="container">
+  <%= link_to :back do %>
+    <i class="fas fa-solid fa-angle-left my-3 secondary-button"> Back</i>
+  <% end %>
 
-<br>
-<h1><%= @event.title %></h1>
-<%= link_to "I 'm going!", '#', class: 'btn btn-primary m-3' %>
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <br>
+  <div class="row">
+    <div class="col-sm-8" style="padding: 0 !important;">
+      <% if @event.photo.key %>
+        <%= cl_image_tag(@event.photo.key) %>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+      <h1><%= @event.title %></h1>
+      <p><%= @event.details %></p>
+      <% # if association exists show i dont attend button %>
+      <% if @clicked %>
+        <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button m-3' %>
+        <br><br>
+      <% else %>
+        <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button m-3' %>
+        <br><br>
+      <% end %>
+    </div>
+  </div>
+  <div class="my-5"
+    style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
