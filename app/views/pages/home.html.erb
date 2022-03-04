@@ -13,12 +13,11 @@
   </div>
 </div>
 
-<div class="container my-5">
-  <h1>TODO: cards</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<%= link_to 'Upcoming', events_path, class: 'primary-button' %>
+<%= link_to 'Near me', events_path, class: 'secondary-button' %>
+<%= link_to 'Genres', genres_path, class: 'btn btn-primary' %>
+<%= link_to 'Anchor default style', '#'%>
 
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= link_to 'Upcoming', events_path, class: 'primary-button' %>
-  <%= link_to 'Near me', events_path, class: 'secondary-button' %>
-  <%= link_to 'Genres', genres_path, class: 'btn btn-primary' %>
-  <%= link_to 'Anchor default style', '#' %>
-</div>
+  <%= render 'events/cards' %>
+  <%= render 'events/genres' %>

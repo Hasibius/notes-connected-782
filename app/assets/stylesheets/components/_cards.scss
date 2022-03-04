@@ -1,0 +1,125 @@
+// NEEDS WORK I'LL HAVE A LOOK AT IT IN THE WEEKEND"
+
+.container1{
+  margin-top: 20px; //distance between Suggestion and lines above in homepage
+  display: grid;
+}
+
+h3{
+  margin-top: 20px;
+}
+
+#container2{
+  margin-top: 20px; // distance between Categories and Suggestion bar
+}
+#card-row {
+  margin-top: 20px;
+  position: inherit;
+}
+
+.card-product {
+  height: 295px;
+  width: 283px;
+  left: 120px;
+  top: 619px;
+  border-radius: 0px;
+  position: inherit;
+  margin: 5px;
+}
+
+.card-product img {
+  height: 179px;
+  width: 283px;
+  left: 0px;
+  top: 0px;
+  border-radius: 5px;
+  position: relative;
+  }
+
+.card-product h2 {
+  position: inherit;
+  left: 4.24%;
+  right: 40.99%;
+  top: 71.86%;
+  bottom: 20%;
+
+  font-family: Exo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  position: relative;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+#date {
+  position: inherit;
+  width: 74px;
+  height: 14px;
+  left: 12px;
+  top: 197px;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+
+  color: #157AFF;
+}
+
+#location {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#rectangle1 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.25);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle2 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle3 img {
+  position: inherit;
+  height: 150px;
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  width: 100%;
+}
+
+#rectangle4 img {
+  position: inherit;
+  height: 150px;
+  width: 100%;
+
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 10px;
+  }
+
+  .row1 {
+    position: relative;
+    display: flex;
+  }
