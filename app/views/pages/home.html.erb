@@ -2,12 +2,18 @@
   <div class="container">
     <h1>The best place to connect through music</h1>
     <p>Let's find gigs nearby!</p>
+    <%= simple_form_for :search, url: '#', method: :get do |f| %>
+    <div class="search-box">
+      <input class="" type="text" placeholder="What are you looking for?" name="search[query]" id="search_query" />
+      <%= link_to events_path do %>
+        <i class="fas fa-search p-3"></i>
+      <% end %>
+    </div>
+    <% end %>
   </div>
 </div>
 
-<div class="container">
-  <h1>TODO: banner</h1>
-  <h1>TODO: search bar</h1>
+<div class="container my-5">
   <h1>TODO: cards</h1>
 
   <p>Find me in app/views/pages/home.html.erb</p>
