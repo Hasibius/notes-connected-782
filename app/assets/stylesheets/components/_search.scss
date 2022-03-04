@@ -1,0 +1,39 @@
+.search-box {
+  width: 75%;
+  position: relative;
+}
+
+.search-box input[type="text"]{
+  width: 100%;
+  padding: 3% 25% 3% 6%;
+  box-sizing: border-box;
+  background: rgba($gray, 0.3);
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  color: $white;
+  outline: none;
+  max-height: 50px;
+}
+
+::-webkit-input-placeholder{
+  color: $white;
+}
+
+::-moz-placeholder{
+  color: $white;
+  opacity: 1;
+}
+
+::-ms-input-placeholder{
+  color: $white;
+}
+
+.fa-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2%;
+  color: $light-blue;
+  font-size: 24px;
+}

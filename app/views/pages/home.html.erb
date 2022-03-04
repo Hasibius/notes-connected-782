@@ -1,6 +1,17 @@
-<h1>TODO: banner</h1>
-<h1>TODO: search bar</h1>
-<h1>TODO: cards</h1>
+<div class="banner" style="background-image: url(<%= asset_path 'banner-dark-blue-blur.jpg' %>);">
+  <div class="container">
+    <h1>The best place to connect through music</h1>
+    <p>Let's find gigs nearby!</p>
+    <%= simple_form_for :search, url: '#', method: :get do |f| %>
+    <div class="search-box">
+      <input class="" type="text" placeholder="What are you looking for?" name="search[query]" id="search_query" />
+      <%= link_to events_path do %>
+        <i class="fas fa-search p-3"></i>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
 
 <p>Find me in app/views/pages/home.html.erb</p>
 <%= link_to 'Upcoming', events_path, class: 'primary-button' %>
@@ -131,7 +142,7 @@
   <h3>Categories</h3>
   <div class="row1" >
     <div class="col-4" id="rectangle1">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg" /> 
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg" />
     </div>
     <div class="col-8" id="rectangle2">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg" />
@@ -145,4 +156,12 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Gull_portrait_ca_usa.jpg/1280px-Gull_portrait_ca_usa.jpg" />
     </div>
   </div>
+<div class="container my-5">
+  <h1>TODO: cards</h1>
+
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <%= link_to 'Upcoming', events_path, class: 'primary-button' %>
+  <%= link_to 'Near me', events_path, class: 'secondary-button' %>
+  <%= link_to 'Genres', genres_path, class: 'btn btn-primary' %>
+  <%= link_to 'Anchor default style', '#' %>
 </div>
