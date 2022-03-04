@@ -1,6 +1,7 @@
 <div class="container1">
   <div class="row justify-content-md-center">
-    <%= @events.each do |event| %>
+    <h3> Suggestions </h3>
+    <% @events.each do |event| %>
       <div class="card-product">
         <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
         <a id="date"><%= event.date %></a>

@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.all
+    @genres = Genre.all
   end
 
   def dashboard
