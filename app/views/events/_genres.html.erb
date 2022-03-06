@@ -1,4 +1,4 @@
-<div class="container" id="container2">
+<%# <div class="container" id="container2">
   <h3>Categories</h3>
   <div class="row1" >
     <div class="col-4" id="rectangle1">
@@ -15,4 +15,16 @@
     <div class="col-4" id="rectangle4">
       <a href="/genres/21"><img src="http://res.cloudinary.com/dibsi5ltn/image/upload/c_fill,h_300,w_400/v1/development/v0dm1h8zue2umxfzmelrr9qrnr58" /></a>
     </div>
+</div> %>
+
+<div class="container-genres">
+  <div class="row">
+    <h3>Categories</h3>
+    <% @genres.limit(4).each do |genre| %>
+      <div class="col-3" id="card-genres">
+        <a href="<%= genre_path(genre)%>"><%= cl_image_tag genre.photo.key %></a>
+        <%= genre.name %>
+      </div>
+    <% end %>
+  </div>
 </div>
