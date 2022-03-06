@@ -17,13 +17,12 @@
     </div>
 </div> %>
 
-<div class="container-genres">
-  <div class="row">
+<div class="container" id="container-genres">
+  <div class="row" id="row-genres">
     <h3>Categories</h3>
     <% @genres.limit(4).each do |genre| %>
       <div class="col-3" id="card-genres">
-        <a href="<%= genre_path(genre)%>"><%= cl_image_tag genre.photo.key %></a>
-        <%= genre.name %>
+        <a href="<%= genre_path(genre)%>"><%= cl_image_tag genre.photo.key %><%= genre.name %></a>
       </div>
     <% end %>
   </div>

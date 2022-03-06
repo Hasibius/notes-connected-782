@@ -1,6 +1,6 @@
-.container-genres {
+#container-genres {
   margin: 10px;
-  display: grid;
+  display: flex;
 }
 
 #card-genres {
@@ -20,7 +20,7 @@
   top: 0px;
 }
 
-.row {
+#row-genres {
   position: relative;
   display: flex;
 }
