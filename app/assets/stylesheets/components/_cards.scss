@@ -18,10 +18,8 @@
 }
 
 #card-product img {
-  height: 179px;
-  width: 283px;
-  left: 0px;
-  top: 0px;
+  height: 200px;
+  width: 277px;
   border-radius: 5px;
   position: relative;
   }
@@ -73,4 +71,11 @@
 #location {
   display: flex;
   justify-content: space-between;
+}
+
+#card-product:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  border-color: #007bff !important;
 }

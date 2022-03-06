@@ -3,7 +3,7 @@
     <h3>Categories</h3>
     <% @genres.limit(4).each do |genre| %>
       <div class="col-3" id="card-genres">
-        <a href="<%= genre_path(genre)%>"><%= cl_image_tag genre.photo.key %><%= genre.name %></a>
+        <a href="<%= genre_path(genre)%>"><%= cl_image_tag genre.photo.key %></a>
       </div>
     <% end %>
   </div>
