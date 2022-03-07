@@ -1,4 +1,4 @@
 <%= simple_form_for [@event, @comment] do |f| %>
-  <%= f.text_area :content, placeholder: 'Write your comment' %>
+  <p><%= f.text_area :content, placeholder: 'Write your comment' %></p>
   <%= f.submit "post comment", class: 'btn btn-primary' %>
 <% end %>

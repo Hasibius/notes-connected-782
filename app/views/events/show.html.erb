@@ -50,10 +50,17 @@
   <hr>
   <div class="row" id="comments">
     <h3>Comments</h3>
-    <% @comments.each do |comment| %>
+    <%= render 'events/comments' %>
+
+   <p> <% @comments.each do |comment| %>
       <h6><%= comment.user.user_name %></h6>
       <p><%= comment.content %></p>
+        <% if current_user == comment.user %>
+          <%= link_to "Edit", [comment.event, comment], method: :edit %>
+          <%= link_to "Delete", comment_path(comment), method: :delete  %>
+        <% end %>
     <% end %>
+   </p>
   </div>
   <div
     id ="map-box"
@@ -64,7 +71,7 @@
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <%= render 'events/comments' %>
+
   <%# , wrap in div  %>
   <div class="text-center my-5 py-3">
     <a href="#top">Back to top</a>
