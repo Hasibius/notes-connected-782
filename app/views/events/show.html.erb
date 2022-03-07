@@ -48,20 +48,26 @@
     </div>
   </div>
   <hr>
-  <div class="row" id="comments">
+  <div class="row">
     <h3>Comments</h3>
     <%= render 'events/comments' %>
 
-   <p> <% @comments.each do |comment| %>
-      <h6><%= comment.user.user_name %></h6>
-      <p><%= comment.content %></p>
-        <% if current_user == comment.user %>
-          <%= link_to "Edit", [comment.event, comment], method: :edit %>
-          <%= link_to "Delete", comment_path(comment), method: :delete  %>
-        <% end %>
+    <% @comments.each do |comment| %>
+     <div class="d-flex justify-content-start">
+      <p><strong><%= comment.user.user_name %></strong></p>
+
+      <p>commented "<%= comment.content %>"</p>
+
+        <div>
+          <% if current_user == comment.user %>
+            <%= link_to "Edit", [comment.event, comment], method: :edit %>
+            <%= link_to "Delete", comment_path(comment), method: :delete  %>
+          <% end %>
+        </div>
+     </div>
     <% end %>
-   </p>
   </div>
+
   <div
     id ="map-box"
     class="my-3"
