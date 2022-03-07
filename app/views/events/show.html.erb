@@ -1,29 +1,63 @@
-<div class="container">
+<div id="top" class="container bg-white">
   <%= link_to :back do %>
-    <i class="fas fa-solid fa-angle-left my-3 secondary-button"> Back</i>
+    <i class="fas fa-solid fa-angle-left my-3 mx-0 secondary-button"> Back</i>
   <% end %>
 
   <br>
-  <div class="row">
-    <div class="col-sm-8" style="padding: 0 !important;">
+  <div class="row" style="--bs-gutter-x: 0rem !important;">
+    <div class="col-md-8" style="padding: 0 !important;">
       <% if @event.photo.key %>
         <%= cl_image_tag(@event.photo.key) %>
       <% end %>
     </div>
-    <div class="col-sm-4">
-      <h1><%= @event.title %></h1>
-      <p><%= @event.details %></p>
-      <% # if association exists show i dont attend button %>
-      <% if @clicked %>
-        <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button m-3' %>
-        <br><br>
-      <% else %>
-        <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button m-3' %>
-        <br><br>
-      <% end %>
+    <%# space between %>
+    <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
+      <div>
+        <p><%= @event.date.strftime('%B %e').upcase %></p>
+        <h1><%= @event.title %></h1>
+        <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
+        <p><a href="#map-box"><i class="fas fa-map-marker-alt"> <%= @event.address %></i></a></p>
+      </div>
+      <div class="align-self-center">
+        <% # if association exists show i dont attend button %>
+        <% if @clicked %>
+        <%# display inline flex%>
+          <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button d-inline-flex' %>
+        <% else %>
+        <%# display inline flex%>
+          <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button d-inline-flex' %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="my-5"
+  <hr>
+  <div class="row mt-3">
+    <div class="col-md-8">
+      <h5>About <%= @event.title %></h5>
+      <p>Genre: <%= link_to @genre.name, genre_path(@genre) %></p>
+      <p><%= @event.details %></p>
+    </div>
+    <div class="col-md-4 d-flex flex-column justify-content-between">
+      <div>
+        <p>Date and time</p>
+        <p><%= @event.date.strftime('%a, %d.%m.%Y %l:%M %p') %></p>
+      </div>
+      <div>
+        <p><%= pluralize(@attendance, 'person')%> going</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row" id="comments">
+    <h3>Comments</h3>
+    <% @comments.each do |comment| %>
+      <h6><%= comment.user.user_name %></h6>
+      <p><%= comment.content %></p>
+    <% end %>
+  </div>
+  <div
+    id ="map-box"
+    class="my-3"
     style="width: 100%; height: 600px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -31,4 +65,9 @@
   </div>
 
   <%= render 'events/comments' %>
+  <%# , wrap in div  %>
+  <div class="text-center my-5 py-3">
+    <a href="#top">Back to top</a>
+  </div>
+  <%#= link_to 'Back to top', '#top', class: 'text-center mb-5' %>
 </div>
