@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.order('date ASC')
     @markers = @events.geocoded.map do |e|
       {
         lat: e.latitude,
