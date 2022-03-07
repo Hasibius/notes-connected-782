@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @user = @event.user
     @attendance = Attendance.where(event: @event.id).count
     @genre = @event.genre
-    @comments = Comment.where(event: @event.id)
+    @comments = Comment.where(event: @event.id).order('updated_at DESC')
   end
 
   def index
