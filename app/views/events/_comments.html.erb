@@ -1,6 +1,6 @@
 <div id="comment-bar">
   <%= simple_form_for [@event, @comment] do |f| %>
-    <%= f.input :content, as: :text, :input_html => {:maxlength =>2,:style=> 'width: 700px'} %>
+    <%= f.input :content, as: :text, placeholder: "Leave a comment!", :input_html => {:maxlength =>300,:style=> 'width: 700px'} %>
       <%= f.submit "post", class: 'btn btn-primary'%>
   <% end %>
 </div>
