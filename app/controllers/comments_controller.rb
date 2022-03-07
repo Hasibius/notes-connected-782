@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
   # create, update, destroy
 
-  def new; end
+  def new
+    @event = Event.find(params[:event_id])
+    @comment = Comment.new(comment_params)
+  end
 
   def create
     @event = Event.find(params[:event_id])
@@ -31,6 +34,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content, :user_id)
+    params.require(:comment).permit(:content, :event_id, :user_id)
   end
 end

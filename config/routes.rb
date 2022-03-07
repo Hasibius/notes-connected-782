@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :attendences, only: %i[show index]
   post 'events/:event_id/attendances', to: 'attendances#create', as: :create_attendance
   delete 'events/:event_id/attendances', to: 'attendances#destroy', as: :delete_attendance
-  resources :events # needs classification after we've implemented all features
+  resources :events do
+    resources :comments, only: %i[create update delete]
+  end # needs classification after we've implemented all features
   resources :genres, only: %i[index show]
 end
