@@ -1,9 +1,9 @@
 <div class="my-3">
-  <h1><%= current_user.user_name %></h1>
-  <h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
+  <h1><%= @user.user_name %></h1>
+  <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
   <br>
-  <% if current_user.photo.key %>
-    <%= cl_image_tag(current_user.photo.key, width: 200, height: 200) %>
+  <% if @user.photo.key %>
+    <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
   <% end %>
   <br>
   <h1>TODO: Followers</h1>
@@ -15,7 +15,7 @@
   <h2 class="">  TODO: list events(My events, attended/attending)</h2>
   <br><br><br>
   <h3>My Events</h3>
-  <% current_user.attends.each do |attendance| %>
+  <% @user.attends.each do |attendance| %>
     <p><%= attendance.title %></p>
   <% end %>
 </div>
