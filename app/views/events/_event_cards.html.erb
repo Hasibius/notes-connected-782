@@ -1,6 +1,6 @@
 <div class="container" id="container-cards">
   <div class="row" id="row-cards">
-    <% @events.limit(8).each do |event| %>
+    <% @events.each do |event| %>
       <div class="col-3" id="card-product">
         <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
         <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %l:%M %p') %></a>
