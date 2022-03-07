@@ -1,18 +1,17 @@
-<div class="container" id="container2">
-  <h3>Categories</h3>
-  <div class="row1" >
-    <div class="col-4" id="rectangle1">
-      <a href="/genres/1"><img src="http://res.cloudinary.com/dibsi5ltn/image/upload/c_fill,h_300,w_400/v1/development/5h8ycitnt6qcgez1ituqrqowb9cb"  /></a>
-    </div>
-    <div class="col-8" id="rectangle2">
-     <a href="/genres/20"> <img src="https://res.cloudinary.com/dibsi5ltn/image/upload/c_fill,h_300,w_400/v1/development/uasnugm095z53dy0k88swhdx77ry" /> </a>
-    </div>
+<div class="container" id="container-genres">
+  <div class="row" id="row-genres">
+    <h3>Categories</h3>
+    <% @genres.limit(4).each do |genre| %>
+      <div class="col-3" id="card-genres">
+        <a href="<%= genre_path(genre)%>">
+          <div>
+            <%=cl_image_tag genre.photo.key, :transformation=>[
+              { :color=> "#FFFFFF", :overlay=>{:font_family=>"Exo", :font_size=>90, :text=> genre.name}},
+              {:flags=>"layer_apply", :gravity=>"center"}
+              ]%>
+          </div>
+        </a>
+      </div>
+    <% end %>
   </div>
-  <div class="row1">
-    <div class="col-8" id="rectangle3">
-      <a href="/genres/10"><img src="https://res.cloudinary.com/dibsi5ltn/image/upload/c_fill,h_300,w_400/v1/development/g0gkyl3lgisetm9xw466a6lmg2qq"></a>
-    </div>
-    <div class="col-4" id="rectangle4">
-      <a href="/genres/21"><img src="http://res.cloudinary.com/dibsi5ltn/image/upload/c_fill,h_300,w_400/v1/development/v0dm1h8zue2umxfzmelrr9qrnr58" /></a>
-    </div>
 </div>
