@@ -1,7 +1,6 @@
 <div class="container" id="container-genres">
   <div class="row" id="row-genres">
-    <h3>Categories</h3>
-    <% @genres.limit(4).each do |genre| %>
+    <% @genres.limit(12).each do |genre| %>
       <div class="col-3" id="card-genres">
         <a href="<%= genre_path(genre)%>">
           <div>

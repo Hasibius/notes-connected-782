@@ -1,16 +1,15 @@
 #container-cards{
-  margin-top: 20px;
   display: flex;
+  justify-content: center;
 }
 
 #row-cards {
-  margin-top: 20px;
   position: inherit;
-  align-items: center;
+  justify-content: center;
 }
 
 #card-product {
-  width: 300px;
+  width: 293px;
   height: 300px;
   left: 426px;
   top: 619px;
@@ -21,8 +20,8 @@
 
 #card-product img {
     height: 200px;
-    width: 300px;
-    // border-radius: 5px;
+    width: 293px;
+    border-radius: 5px 5px 0 0;
     position: relative;
     right: 12px;
   }
