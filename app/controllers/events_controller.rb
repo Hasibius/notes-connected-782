@@ -10,6 +10,10 @@ class EventsController < ApplicationController
       }]
     # does the user already attend to this event
     @clicked = Attendance.where(user_id: current_user.id, event_id: @event.id).any?
+    @user = @event.user
+    @attendance = Attendance.where(event: @event.id).count
+    @genre = @event.genre
+    @comments = Comment.where(event: @event.id)
   end
 
   def index
