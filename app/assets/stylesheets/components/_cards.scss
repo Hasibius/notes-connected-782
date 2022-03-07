@@ -15,13 +15,16 @@
   left: 426px;
   top: 619px;
   margin: 15px;
+  background-color: white;
+  border-radius: 5px;
 }
 
 #card-product img {
-  height: 200px;
-  width: 277px;
-  border-radius: 5px;
-  position: relative;
+    height: 200px;
+    width: 300px;
+    // border-radius: 5px;
+    position: relative;
+    right: 12px;
   }
 
 #card-product h2 {
