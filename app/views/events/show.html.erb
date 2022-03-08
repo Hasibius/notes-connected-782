@@ -48,16 +48,16 @@
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row" style="--bs-gutter-x: 0rem !important;">
     <h3>Comments</h3>
     <%= render 'events/comments' %>
 
     <div class="border">
       <% @comments.each do |comment| %>
-     <div id="something">
+     <div class="m-3">
       <h5><strong><%= comment.user.user_name %></strong></h5>
       <a><%= time_ago_in_words(comment.created_at) %> ago</a>
-      <p><strong><%= comment.content %></strong></p>
+      <p class="mb-0"><strong><%= comment.content %></strong></p>
         <div id>
           <% if current_user == comment.user %>
             <%= link_to "Edit", [comment.event, comment], method: :edit %>
