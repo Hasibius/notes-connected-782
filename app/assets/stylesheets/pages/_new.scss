@@ -1,8 +1,10 @@
-#show {
+#new {
   background-image: url( 'banner-dark-blue-blur.jpg' );
   background-size: cover;
 }
 
-.row img{
-  width: 100%;
+#create_event {
+  color: white;
+  display: flex;
+  justify-content: center;
 }

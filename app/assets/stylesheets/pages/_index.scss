@@ -1,3 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+#index {
+  background-image: url( 'banner-dark-blue-blur.jpg' );
+  background-size: cover;
+}
