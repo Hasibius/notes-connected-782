@@ -110,20 +110,6 @@ event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_
 puts "|#{url}| ✅"
 event.save!
 
-event = Event.new(title: "Beach Party", date: "10.08.2022, 13:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Rock"), address: "Balanstraße 73, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/beach-01_dszaqn.jpg'
-file = URI.open(url)
-event.photo.attach(io: file, filename: 'beach-01_dszaqn.jpg', content_type: 'image/jpg')
-puts "|#{url}| ✅"
-event.save!
-
-event = Event.new(title: "Classical Music Event", date: "07.08.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Classical"), address: "Zellstr 4, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/classical-01_x3jjmn.jpg'
-file = URI.open(url)
-event.photo.attach(io: file, filename: 'classical-01_x3jjmn.jpg', content_type: 'image/jpg')
-puts "|#{url}| ✅"
-event.save!
-
 event = Event.new(title: "90's Party", date: "18.05.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/90s-01_yfhhlz.jpg'
 file = URI.open(url)
@@ -197,6 +183,20 @@ event.save!
 
 event = Event.new(title: "Mega 90er Rave", date: "29.05.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Techno"), address: "Reitknechtstraße 6, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646745949/development/events/90-rave-01_zh8kvh.jpg'
+file = URI.open(url)
+event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
+puts "|#{url}| ✅"
+event.save!
+
+event = Event.new(title: "GIRLS Tanz", date: "30.04.2022, 23:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Techno"), address: "Grafinger Str. 6, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
+file = URI.open(url)
+event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
+puts "|#{url}| ✅"
+event.save!
+
+event = Event.new(title: "Geometric Vision", date: "01.04.2022, 16:45", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Rock"), address: "Maximilianstraße 28, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
