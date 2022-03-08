@@ -103,7 +103,7 @@ puts "Done seeding Users."
 # <--------------------EVENTS-------------------->
 
 puts 'Seeding Events...'
-event = Event.new(title: "Guitar Solo", date: "11.03.2022, 18:300", details: "For those who like Instrumental music they can join me and enjoy. Feel free to grab your own drinks! \nSee you there! 😃", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Instrumental"), address: "Heßstraße 132, München")
+event = Event.new(title: "Guitar Solo", date: "11.03.2022, 18:30", details: "For those who like Instrumental music they can join me and enjoy. Feel free to grab your own drinks! \nSee you there! 😃", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Instrumental"), address: "Heßstraße 132, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
@@ -188,15 +188,15 @@ event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_
 puts "|#{url}| ✅"
 event.save!
 
-event = Event.new(title: "GIRLS Tanz", date: "30.04.2022, 23:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Techno"), address: "Grafinger Str. 6, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
+event = Event.new(title: "GIRLS Tanz", date: "30.04.2022, 23:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Techno"), address: "Prinzregentenplatz 12, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646754946/development/events/girls-tanz-01_xb169y.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
 event.save!
 
 event = Event.new(title: "Geometric Vision", date: "01.04.2022, 16:45", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Rock"), address: "Maximilianstraße 28, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646754946/development/events/geometric-vision-01_hnx60n.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
