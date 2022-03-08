@@ -1,6 +1,6 @@
 <div class="mb-3">
   <%= simple_form_for [@event, @comment] do |f| %>
     <%= f.input :content, as: :text, placeholder: "Leave a comment!", :input_html => {:maxlength =>300,:style=> 'width: 700px'} %>
-      <%= f.submit "post", class: 'btn btn-primary'%>
+      <%= f.submit "Post", class: 'primary-button'%>
   <% end %>
 </div>

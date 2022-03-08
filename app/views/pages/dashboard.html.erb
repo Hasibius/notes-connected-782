@@ -1,10 +1,32 @@
 <div class="container">
-  <h1><%= @user.user_name %></h1>
-  <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
-  <br>
-  <% if @user.photo.key %>
-    <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
-  <% end %>
+  <div class="d-flex justify-content-lg-start w-100">
+    <div>
+      <% if @user.photo.key %>
+        <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
+      <% end %>
+    </div>
+    <div class="mr-auto p-3">
+      <h1><%= @user.user_name %></h1>
+      <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+      <p><%= @user.bio %></p>
+      <div class="d-inline-flex justify-content-between w-100">
+        <div>
+          <% unless current_user == @user %>
+            <% if @clicked %>
+            <%# display inline flex%>
+              <%= link_to "Unfollow", delete_follow_path(@user), method: :delete, class: 'secondary-button d-inline-flex' %>
+            <% else %>
+            <%# display inline flex%>
+              <%= link_to "Follow", create_follow_path(@user), method: :post, class: 'primary-button d-inline-flex' %>
+            <% end %>
+          <% end %>
+        </div>
+        <div>
+          <p>Followed by <%= pluralize(@followers, 'person') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
 
   <h2>Hosted events</h2>
