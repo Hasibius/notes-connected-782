@@ -14,7 +14,25 @@
 </div>
 
 <div class="container">
-  <h3>Suggestions</h3>
+  <h3>Highlights</h3>
+  <div class="cards">
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-1.jpg'  %>)">
+        Upcomming events
+      </div>
+    </a>
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-2.jpg'  %>)">
+        Events near you
+      </div>
+    </a>
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-3.jpg'  %>)">
+        Popular
+      </div>
+    </a>
+  </div>
+  <h3>More events</h3>
   <%= render 'events/cards' %>
   <h3>Categories</h3>
   <%= render 'events/genres' %>
