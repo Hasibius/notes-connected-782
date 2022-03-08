@@ -40,7 +40,7 @@
     <div class="col-md-4 d-flex flex-column justify-content-between">
       <div>
         <p>Date and time</p>
-        <p><%= @event.date.strftime('%a, %d.%m.%Y %l:%M %p') %></p>
+        <p><%= @event.date.strftime('%a, %d.%m.%Y %H:%M') %></p>
       </div>
       <div>
         <p><%= pluralize(@attendance, 'person')%> going</p>
