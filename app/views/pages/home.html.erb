@@ -15,10 +15,22 @@
 
 <div class="container">
   <h3>Highlights</h3>
-  <div class="row">
-    <a href="/events"><img src="" alt="">Upcomming events</a>
-    <a href="/events"><img src="" alt="">Events near you</a>
-    <a href="/events"><img src="" alt="">Events</a>
+  <div class="cards">
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-1.jpg'  %>)">
+        Upcomming events
+      </div>
+    </a>
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-2.jpg'  %>)">
+        Events near you
+      </div>
+    </a>
+    <a href="/events">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=asset_path 'unsplash-card-3.jpg'  %>)">
+        Popular
+      </div>
+    </a>
   </div>
   <h3>More events</h3>
   <%= render 'events/cards' %>
