@@ -1,6 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+  connect() {
+    const banner = document.querySelector('.banner')
+    if (banner) {
+      this.element.classList.add("navbar-lewagon-fixed-top");
+    };
+  };
+
   updateNavbar() {
     const banner = document.querySelector('.banner')
     if (banner) {

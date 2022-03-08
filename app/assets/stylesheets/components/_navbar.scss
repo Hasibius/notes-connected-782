@@ -2,12 +2,17 @@
   justify-content: space-between;
   background-color: transparent;
   transition: 0.5s background-color ease;
-  // z-index: 2;
-  //background-image: url("banner-dark-blue-blur.jpg");
 }
 
 .navbar-lewagon-very-dark-blue {
   background-color: $very-dark-blue;
+}
+
+.navbar-lewagon-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .nav-item {
