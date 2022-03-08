@@ -2,7 +2,7 @@
   <% @genres.limit(8).each do |genre| %>
     <div class="card-genres">
       <a href="<%= genre_path(genre)%>">
-        <div class="genre-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_tag(genre.photo.key) %>)">
+        <div class="genre-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cloudinary_url(genre.photo.key) %>)">
           <%= genre.name%>
         </div>
       </a>
