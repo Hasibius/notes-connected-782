@@ -12,5 +12,7 @@ class PagesController < ApplicationController
     else
       @user = current_user
     end
+    @followers = Follow.where(artist: @user).count
+    @clicked = Follow.where(artist: @user, follower: current_user).any?
   end
 end
