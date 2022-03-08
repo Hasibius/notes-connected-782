@@ -1,18 +1,20 @@
-<div class="container">
-  <div class="d-flex justify-content-center">
-    <%= simple_form_for(@event) do |f| %>
-    <h1>Create your own event</h1>
-      <%= f.input :title %>
-      <%= f.input :date %>
-      <%= f.input :details %>
-      <%= f.input :address,
-                  input_html: { data: { geocoder_target: "address" }, class:"d-none" },
-                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+<div class="background">
+  <div class="container">
+    <div class="d-flex justify-content-center text-white">
+      <%= simple_form_for(@event) do |f| %>
+      <h1 id="create_event">Create your own event</h1>
+        <%= f.input :title %>
+        <%= f.input :date %>
+        <%= f.input :details %>
+        <%= f.input :address,
+                    input_html: { data: { geocoder_target: "address" }, class:"d-none" },
+                    wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
 
-      <%= f.association :genre, collection: Genre.all %>
-      <%= f.input :photo, as: :file,
-                      allow_blank: true %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+        <%= f.association :genre, collection: Genre.all %>
+        <%= f.input :photo, as: :file,
+                        allow_blank: true %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

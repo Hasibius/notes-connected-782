@@ -1,13 +1,15 @@
-body{
+.new {
   background-image: url( 'banner-dark-blue-blur.jpg' );
   background-size: cover;
 }
 
-h1 {
+.show {
+  background-image: url( 'banner-dark-blue-blur.jpg' );
+  background-size: cover;
+}
+
+#create_event {
   color: white;
   display: flex;
   justify-content: center;
-}
-label {
-  color: white !important;
 }
