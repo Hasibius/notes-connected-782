@@ -1,16 +1,11 @@
-<div class="container" id="container-genres">
-  <div class="row" id="row-genres">
-    <% @genres.limit(12).each do |genre| %>
-      <div class="col-3" id="card-genres">
-        <a href="<%= genre_path(genre)%>">
-          <div>
-            <%=cl_image_tag genre.photo.key, :transformation=>[
-              { :color=> "#FFFFFF", :overlay=>{:font_family=>"Exo", :font_size=>90, :text=> genre.name}},
-              {:flags=>"layer_apply", :gravity=>"center"}
-              ]%>
-          </div>
-        </a>
-      </div>
-    <% end %>
-  </div>
+<div class="row-genres">
+  <% @genres.limit(8).each do |genre| %>
+    <div>
+      <a href="<%= genre_path(genre)%>">
+        <div class="genre-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cloudinary_url(genre.photo.key) %>)">
+          <%= genre.name%>
+        </div>
+      </a>
+    </div>
+  <% end %>
 </div>
