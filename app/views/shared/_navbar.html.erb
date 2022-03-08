@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "Create event", "/events/new" , class: "secondary-button nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Home", root_path, class: "secondary-button nav-link" %>
           </li>
           <li class="nav-item dropdown">
