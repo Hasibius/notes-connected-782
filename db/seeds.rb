@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require_relative 'users'
+
+# p Users::USERS.size
+
 puts "\nSeeding database...\n\n"
 
 puts "Deleting Comments..."
@@ -68,77 +72,71 @@ puts "Done seeding Genres."
 
 # <--------------------USERS-------------------->
 
-puts 'Seeding users...'
+puts 'Seeding 102 users...'
 
-user1 = User.new(email: "abhijeet@email.com", password: "abhijeet@email.com", first_name: "Abhijeet", last_name: "Clay", bio: "Esse eu nulla sunt tempor.", user_name: "abhijeet_clay")
-# downloaded_image = URI.open("#")
-# user1.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
-user1.save!
+# bots 😅
+Users::USERS.each do |usr|
+  # puts "|#{usr[:first_name]}|"
+  u = User.new(email: usr[:email], password: usr[:password], first_name: usr[:first_name], last_name: usr[:last_name],
+    user_name: usr[:user_name])
+  u.save!
+end
 
-user2 = User.new(email: "nyah@email.com", password: "nyah@email.com", first_name: "Nyah", last_name: "Schmeling", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "nyah_schmeling")
-# downloaded_image = URI.open("#")
-# user2.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
-user2.save!
+# User
+user = User.new(email: "hasib@email.it", password: "hasib@email.it", first_name: "Hasib", last_name: "Selimovic", user_name: "hasib_s")
+url = "https://res.cloudinary.com/dibsi5ltn/image/upload/v1646664977/development/avatars/hasib-01_iscaza.jpg"
+file = URI.open(url)
+user.photo.attach(io: file, filename: 'hasib-01_iscaza.jpg', content_type: 'image/png')
+user.save!
+puts "|#{url}| ✅"
 
-user3 = User.new(email: "boris_knezevic@email.com", password: "boris_knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "boris_knezevic")
-# downloaded_image = URI.open("#")
-# user3.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
-user3.save!
-
-user4 = User.new(email: "marcel_fonseca@email.com", password: "marcel_fonseca@email.com", first_name: "Marcel", last_name: "Fonseca", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "marcel_fonseca")
-# downloaded_image = URI.open("#")
-# user4.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
-user4.save!
-
-user5 = User.new(email: "lu_padillas@email.com", password: "lu_padillas@email.com", first_name: "Lu", last_name: "Padillas", bio: "Esse eu nulla sunt tempor elit ut ut ut laboris nostrud.", user_name: "lu_padillas")
-# downloaded_image = URI.open("#")
-# user5.photo.attach(io: downloaded_image, filename: '#.png', content_type: 'image/png')
-user5.save!
+# Artist
+user = User.new(email: "ddymocke0@email.com", password: "ddymocke0@email.com", first_name: "Daven", last_name: "Dymocke", bio: "Hi! My name is Daven, I come from Italy and I like to play the guitar.", user_name: "daven")
+url = "https://res.cloudinary.com/dibsi5ltn/image/upload/v1646668549/development/avatars/daven-01_swzd9d.jpg"
+file = URI.open(url)
+user.photo.attach(io: file, filename: 'daven-01_swzd9d.jpg', content_type: 'image/png')
+user.save!
+puts "|#{url}| ✅"
 
 puts "Done seeding Users."
 
 # <--------------------EVENTS-------------------->
 
-# file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
-# article = Article.new(title: 'NES', body: "A great console")
-# article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
 puts 'Seeding Events...'
-event1 = Event.new(title: "BBQ @park", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Alternative"), address: "Heßstraße 132, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/bbq-01_x1vp4c.jpg'
+event = Event.new(title: "Guitar Solo", date: Date.new, details: "For those who like Instrumental music they can join me and enjoy. Feel free to grab your own drinks! \nSee you there! 😃", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Instrumental"), address: "Heßstraße 132, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
 file = URI.open(url)
-event1.photo.attach(io: file, filename: 'bbq-01_x1vp4c.jpg', content_type: 'image/jpg')
+event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
-event1.save!
+event.save!
 
-
-event2 = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock"), address: "Balanstraße 73, München")
+event = Event.new(title: "Beach Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Rock"), address: "Balanstraße 73, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/beach-01_dszaqn.jpg'
 file = URI.open(url)
-event2.photo.attach(io: file, filename: 'beach-01_dszaqn.jpg', content_type: 'image/jpg')
+event.photo.attach(io: file, filename: 'beach-01_dszaqn.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
-event2.save!
+event.save!
 
-event3 = Event.new(title: "Classical Music Event", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "marcel_fonseca"), genre: Genre.find_by(name: "Classical"), address: "Zellstr 4, München")
+event = Event.new(title: "Classical Music Event", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Classical"), address: "Zellstr 4, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/classical-01_x3jjmn.jpg'
 file = URI.open(url)
-event3.photo.attach(io: file, filename: 'classical-01_x3jjmn.jpg', content_type: 'image/jpg')
+event.photo.attach(io: file, filename: 'classical-01_x3jjmn.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
-event3.save!
+event.save!
 
-event4 = Event.new(title: "90's Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "nyah_schmeling"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
+event = Event.new(title: "90's Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/90s-01_yfhhlz.jpg'
 file = URI.open(url)
-event4.photo.attach(io: file, filename: '90s-01_yfhhlz.jpg', content_type: 'image/jpg')
+event.photo.attach(io: file, filename: '90s-01_yfhhlz.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
-event4.save!
+event.save!
 
-event5 = Event.new(title: "Rock 'n' Roll Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_knezevic"), genre: Genre.find_by(name: "Rock\ And\ Roll"), address: "Dachauer Straße 114, München")
+event = Event.new(title: "Rock 'n' Roll Party", date: Date.new, details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Rock\ And\ Roll"), address: "Dachauer Straße 114, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/rock-n-roll-01_xotqod.jpg'
 file = URI.open(url)
-event5.photo.attach(io: file, filename: 'rock-n-roll-01_xotqod.jpg', content_type: 'image/jpg')
+event.photo.attach(io: file, filename: 'rock-n-roll-01_xotqod.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
-event5.save!
+event.save!
 
 puts "Done seeding Events."
 
@@ -146,20 +144,14 @@ puts "Done seeding Events."
 
 puts 'Seeding Attendances...'
 
-attendance1 = Attendance.new(user: User.find_by(user_name: "abhijeet_clay"), event: Event.find_by(title: "BBQ @park"))
-attendance1.save!
+# Add 57 attendances to the event
 
-attendance2 = Attendance.new(user: User.find_by(user_name: "nyah_schmeling"), event: Event.find_by(title: "BBQ @park"))
-attendance2.save!
-
-attendance3 = Attendance.new(user: User.find_by(user_name: "boris_knezevic"), event: Event.find_by(title: "Beach Party"))
-attendance3.save!
-
-attendance4 = Attendance.new(user: User.find_by(user_name: "marcel_fonseca"), event: Event.find_by(title: "Classical Music Event"))
-attendance4.save!
-
-attendance5 = Attendance.new(user: User.find_by(user_name: "lu_padillas"), event: Event.find_by(title: "90's Party"))
-attendance5.save!
+event = Event.find_by(title: "Guitar Solo")
+User.all.first(57).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
 
 puts "Done seeding Attendances."
 
@@ -167,20 +159,23 @@ puts "Done seeding Attendances."
 
 puts 'Seeding Reviews...'
 
-review1 = Review.new(comment: "Reprehenderit cillum non non Lorem ONE.", score: 4, reviewer: User.find_by(user_name: "abhijeet_clay"), artist: User.find_by(user_name: "boris_knezevic"))
-review1.save!
+review = Review.new(comment: "Good vibe!", score: 4, reviewer: User.find_by(user_name: "cstayte1x"), artist: User.find_by(user_name: "daven"))
+review.save!
 
-review2 = Review.new(comment: "He's really nice to hear :).", score: 5, reviewer: User.find_by(user_name: "boris_knezevic"), artist: User.find_by(user_name: "marcel_fonseca"))
-review2.save!
+review = Review.new(comment: "He's really nice to hear :).", score: 5, reviewer: User.find_by(user_name: "bdinleyr"), artist: User.find_by(user_name: "daven"))
+review.save!
 
-review3 = Review.new(comment: "Reprehenderit cillum non non Lorem THREE.", score: 2, reviewer: User.find_by(user_name: "lu_padillas"), artist: User.find_by(user_name: "boris_knezevic"))
-review3.save!
+review = Review.new(comment: "Yet another solid performance", score: 5, reviewer: User.find_by(user_name: "bdinleyr"), artist: User.find_by(user_name: "daven"))
+review.save!
 
-review4 = Review.new(comment: "Reprehenderit cillum non non Lorem FOUR.", score: 4, reviewer: User.find_by(user_name: "nyah_schmeling"), artist: User.find_by(user_name: "marcel_fonseca"))
-review4.save!
+review = Review.new(comment: "The tempo was too slow for me", score: 2, reviewer: User.find_by(user_name: "dbougent"), artist: User.find_by(user_name: "daven"))
+review.save!
 
-review5 = Review.new(comment: "He's SHIT! >:c", score: 1, reviewer: User.find_by(user_name: "marcel_fonseca"), artist: User.find_by(user_name: "boris_knezevic"))
-review5.save!
+review = Review.new(comment: "Relaxing!", score: 4, reviewer: User.find_by(user_name: "mjozefczak12"), artist: User.find_by(user_name: "daven"))
+review.save!
+
+review = Review.new(comment: "Nice music, but the duration was too short", score: 3, reviewer: User.find_by(user_name: "merskin1i"), artist: User.find_by(user_name: "daven"))
+review.save!
 
 puts "Done seeding Reviews."
 
@@ -188,20 +183,11 @@ puts "Done seeding Reviews."
 
 puts 'Seeding Follows...'
 
-follow1 = Follow.new(follower: User.find_by(user_name: "abhijeet_clay"), artist: User.find_by(user_name: "boris_knezevic"))
-follow1.save!
-
-follow2 = Follow.new(follower: User.find_by(user_name: "boris_knezevic"), artist: User.find_by(user_name: "marcel_fonseca"))
-follow2.save!
-
-follow3 = Follow.new(follower: User.find_by(user_name: "lu_padillas"), artist: User.find_by(user_name: "boris_knezevic"))
-follow3.save!
-
-follow4 = Follow.new(follower: User.find_by(user_name: "nyah_schmeling"), artist: User.find_by(user_name: "boris_knezevic"))
-follow4.save!
-
-follow5 = Follow.new(follower: User.find_by(user_name: "marcel_fonseca"), artist: User.find_by(user_name: "boris_knezevic"))
-follow5.save!
+artist = User.find_by(user_name: "daven")
+User.all.first(31).each do |usr|
+  follow = Follow.new(follower: usr, artist: artist)
+  follow.save!
+end
 
 puts "Done seeding Follows."
 
@@ -209,19 +195,19 @@ puts "Done seeding Follows."
 
 puts 'Seeding Comments...'
 
-comment1 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "abhijeet_clay"), event: Event.find_by(title: "BBQ @park"))
+comment1 = Comment.new(content: "He has some nice reviews", user: User.find_by(user_name: "bhallett2n"), event: Event.find_by(title: "Guitar Solo"))
 comment1.save!
 
-comment2 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "boris_knezevic"), event: Event.find_by(title: "BBQ @park"))
+comment2 = Comment.new(content: "Cant't wait for this play!", user: User.find_by(user_name: "bdinleyr"), event: Event.find_by(title: "Guitar Solo"))
 comment2.save!
 
-comment3 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "lu_padillas"), event: Event.find_by(title: "90's Party"))
+comment3 = Comment.new(content: "Does he also sing?", user: User.find_by(user_name: "ebubear2a"), event: Event.find_by(title: "Guitar Solo"))
 comment3.save!
 
-comment4 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "nyah_schmeling"), event: Event.find_by(title: "BBQ @park"))
+comment4 = Comment.new(content: "No, but he is a very good guitar player", user: User.find_by(user_name: "cbramwella"), event: Event.find_by(title: "Guitar Solo"))
 comment4.save!
 
-comment5 = Comment.new(content: "Eiusmod excepteur ofs.", user: User.find_by(user_name: "marcel_fonseca"), event: Event.find_by(title: "BBQ @park"))
+comment5 = Comment.new(content: "He is my favorite!", user: User.find_by(user_name: "ssummersc"), event: Event.find_by(title: "Guitar Solo"))
 comment5.save!
 
 puts "Done seeding Comments."
