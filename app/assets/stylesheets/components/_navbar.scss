@@ -1,8 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0);
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  // z-index: 2;
   //background-image: url("banner-dark-blue-blur.jpg");
 }
+
+.navbar-lewagon-very-dark-blue {
+  background-color: $very-dark-blue;
+}
+
 .nav-item {
   margin-right: 6px;
 }
