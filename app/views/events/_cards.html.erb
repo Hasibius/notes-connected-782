@@ -6,7 +6,7 @@
         <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %l:%M %p') %></a>
         <h2><%= event.title %></h2>
         <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
+            <a><i class="fas fa-map-marker-alt"></i> <%= event.address.gsub(/,.+/, '') %> </a>
 
             <a><i class="fas fa-thin fa-user"></i><%= Attendance.where(event: event.id).count  %></a>
         </div>
