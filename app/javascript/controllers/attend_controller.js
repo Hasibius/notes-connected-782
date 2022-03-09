@@ -25,6 +25,8 @@ export default class extends Controller {
 
     // console.log(this.createTarget);
 
+    // console.log("Create called.");
+    // call post route for events#create method
     fetch(url, {
       headers: headers,
       method: 'POST',
@@ -39,9 +41,7 @@ export default class extends Controller {
       // console.log(data)
       this.createTarget.outerHTML = data
     });
-
-    // console.log("Create called.");
-    // call post route for events#create method
+    console.log(this.numberTarger);
   };
 
   destroyAttendance(event) {
@@ -62,9 +62,9 @@ export default class extends Controller {
 
     // console.log("Destroy called."); ${this.destroyTarget.origin}
     const url = `${this.destroyTarget.pathname}`
-    // call delete route for events#destroy method
     // console.log(this.destroyTarget);
     // console.log(url);
+    // call delete route for events#destroy method
     fetch(url, {
       headers: headers,
       method: 'DELETE',
@@ -78,5 +78,6 @@ export default class extends Controller {
       // console.log(data);
       this.destroyTarget.outerHTML = data
     });
+    console.log(this.numberTarger);
   };
 }
