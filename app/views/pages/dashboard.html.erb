@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container"
+    data-controller="follow">
   <div class="d-flex justify-content-lg-center w-100">
     <div>
       <% if @user.photo.key %>
@@ -15,17 +16,20 @@
           <p class="mb-2"> Hosted <%= Event.where(user_id: @user.id).count %> events</p>
         </div>
         <div class="d-inline-flex align-items-center">
-          <p class="mb-2">Followed by <%= pluralize(@followers, 'person') %></p>
+          <p class="mb-2"
+              data-follow-target="number">
+            Followed by <%= pluralize(@followers, 'person') %>
+          </p>
         </div>
       </div>
       <% unless current_user == @user %>
         <div>
             <% if @clicked %>
             <%# display inline flex%>
-              <%= link_to "Unfollow", delete_follow_path(@user), method: :delete, class: 'secondary-button d-inline-flex' %>
+              <%= render 'destroy_follow_button', user: @user %>
             <% else %>
             <%# display inline flex%>
-              <%= link_to "Follow", create_follow_path(@user), method: :post, class: 'primary-button d-inline-flex' %>
+            <%= render 'create_follow_button', user: @user %>
             <% end %>
         </div>
       <% end %>

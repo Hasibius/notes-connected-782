@@ -1,0 +1,4 @@
+<%= link_to "Follow", create_follow_path(user), method: :post, class: 'primary-button d-inline-flex',
+          data: {action: 'click->follow#createFollow',
+                  follow_target: 'create',
+                  user_id: user.id } %>

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :attendences, only: %i[show index]
   post 'events/:event_id/attendances', to: 'attendances#create', as: :create_attendance
   delete 'events/:event_id/attendances', to: 'attendances#destroy', as: :delete_attendance
-  post 'dashboard/:user_id/attendances', to: 'follows#create', as: :create_follow
-  delete 'dashboard/:user_id/attendances', to: 'follows#destroy', as: :delete_follow
+  post 'dashboard/:user_id/follows', to: 'follows#create', as: :create_follow
+  delete 'dashboard/:user_id/follows', to: 'follows#destroy', as: :delete_follow
   resources :events do
     resources :comments, only: %i[create edit update]
   end
