@@ -41,7 +41,10 @@ export default class extends Controller {
       // console.log(data)
       this.createTarget.outerHTML = data
     });
-    console.log(this.numberTarger);
+    const num = parseInt(this.numberTarget.innerText, 10) + 1;
+    let pluralize = num == 1 ? 'person' : 'people';
+    this.numberTarget.innerText = `${num} ${pluralize} going`
+    // console.log(this.numberTarget.innerText);
   };
 
   destroyAttendance(event) {
@@ -78,6 +81,9 @@ export default class extends Controller {
       // console.log(data);
       this.destroyTarget.outerHTML = data
     });
-    console.log(this.numberTarger);
+    const num = parseInt(this.numberTarget.innerText, 10) - 1;
+    let pluralize = num == 1 ? 'person' : 'people';
+    this.numberTarget.innerText = `${num} ${pluralize} going`
+    // console.log(this.numberTarget.innerText);
   };
 }

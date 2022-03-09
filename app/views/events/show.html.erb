@@ -1,4 +1,5 @@
-<div id="top" class="container bg-white">
+<div id="top" class="container bg-white"
+    data-controller="attend">
   <%= link_to :back do %>
     <i class="fas fa-solid fa-angle-left my-3 mx-0 secondary-button"> Back</i>
   <% end %>
@@ -12,7 +13,7 @@
     </div>
     <%# space between %>
     <div class="col-md-4 px-3 d-flex flex-column justify-content-between"
-          data-controller="attend">
+          >
       <div>
         <p><%= @event.date.strftime('%B %e').upcase %></p>
         <h1><%= @event.title %></h1>
