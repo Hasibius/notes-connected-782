@@ -78,6 +78,7 @@
 
 #card-product:hover {
   transform: scale(1.1);
+  transition-duration: 0.8s;
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.4);
   z-index: 3;
   border-color: #007bff !important;
