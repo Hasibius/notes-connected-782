@@ -1,17 +1,25 @@
 <div class="container">
-  <div class="d-flex justify-content-lg-start w-100">
+  <div class="d-flex justify-content-lg-center w-100">
     <div>
       <% if @user.photo.key %>
-        <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
+        <%= cl_image_tag(@user.photo.key, width: 200, height: 200, style: "border-radius: 50%;") %>
       <% end %>
     </div>
-    <div class="mr-auto p-3">
-      <h1><%= @user.user_name %></h1>
-      <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+    <div class="mr-auto p-3 text-white">
+      <h1 class="text-white"><%= @user.user_name %></h1>
+      <h2 class="text-white"><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+      <h4 class="text-white"> <%= @user.email  %></h4>
       <p><%= @user.bio %></p>
-      <div class="d-inline-flex justify-content-between w-100">
+      <div class="d-inline-flex justify-content-between" style="width: 20vw;" >
+        <div class="d-inline-flex align-items-center">
+          <p class="mb-2"> Hosted <%= Event.where(user_id: @user.id).count %> events</p>
+        </div>
+        <div class="d-inline-flex align-items-center">
+          <p class="mb-2">Followed by <%= pluralize(@followers, 'person') %></p>
+        </div>
+      </div>
+      <% unless current_user == @user %>
         <div>
-          <% unless current_user == @user %>
             <% if @clicked %>
             <%# display inline flex%>
               <%= link_to "Unfollow", delete_follow_path(@user), method: :delete, class: 'secondary-button d-inline-flex' %>
@@ -19,17 +27,13 @@
             <%# display inline flex%>
               <%= link_to "Follow", create_follow_path(@user), method: :post, class: 'primary-button d-inline-flex' %>
             <% end %>
-          <% end %>
         </div>
-        <div>
-          <p>Followed by <%= pluralize(@followers, 'person') %></p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
   <br>
 
-  <h2>Hosted events</h2>
+  <h2 class="d-flex justify-content-center text-white">Hosted events</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.events.each do |event| %>
@@ -55,7 +59,7 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><h2>Upcoming</h2>
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><h2 class="text-white">Upcoming</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.attends.each do |attendance| %>
@@ -72,7 +76,7 @@
       <% end %>
     </div>
   </div></div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><h2>Past events</h2>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><h2 class="text-white">Past events</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.attends.each do |attendance| %>
@@ -90,6 +94,4 @@
     </div>
   </div>
   </div>
-
-
 </div>
