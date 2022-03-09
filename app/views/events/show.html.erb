@@ -1,4 +1,4 @@
-<div id="top" class="container bg-white"
+<div id="top" class="container bg-white p-5"
     data-controller="attend">
   <%= link_to :back do %>
     <i class="fas fa-solid fa-angle-left my-3 mx-0 secondary-button"> Back</i>
@@ -19,6 +19,17 @@
         <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
         <p><a href="#map-box"><i class="fas fa-map-marker-alt"> <%= @event.address %></i></a></p>
       </div>
+
+      <div
+        id ="map-box"
+        class="my-3"
+        style="width: 100%; height: 400px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+
       <div class="align-self-center">
         <% # if association exists show i dont attend button %>
         <% if @clicked %>
@@ -68,15 +79,6 @@
      </div>
       <% end %>
     </div>
-  </div>
-
-  <div
-    id ="map-box"
-    class="my-3"
-    style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
   <%#= link_to 'Back to top', '#top', class: 'text-center mb-5' %>
 </div>
