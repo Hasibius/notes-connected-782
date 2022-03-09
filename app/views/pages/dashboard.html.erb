@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="d-flex justify-content-lg-start w-100">
+  <div class="d-flex justify-content-lg-center w-100">
     <div>
       <% if @user.photo.key %>
-        <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
+        <%= cl_image_tag(@user.photo.key, width: 200, height: 200, style: "border-radius: 50%;") %>
       <% end %>
     </div>
     <div class="mr-auto p-3 text-white">
