@@ -12,8 +12,7 @@
       <% end %>
     </div>
     <%# space between %>
-    <div class="col-md-4 px-3 d-flex flex-column justify-content-between"
-          >
+    <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
       <div>
         <h1><%= @event.title %></h1>
         <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
@@ -80,5 +79,5 @@
       <% end %>
     </div>
   </div>
-  <%#= link_to 'Back to top', '#top', class: 'text-center mb-5' %>
+  <%# = link_to 'Back to top', '#top', class: 'text-center mb-5' %>
 </div>
