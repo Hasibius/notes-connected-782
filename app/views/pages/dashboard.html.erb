@@ -21,8 +21,11 @@
             <% end %>
           <% end %>
         </div>
-        <div>
-          <p>Followed by <%= pluralize(@followers, 'person') %></p>
+        <div class="d-flex align-items-center">
+          <p class="m-0"> Hosted <%= Event.where(user_id: @user.id).count %> events.</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <p class="m-0">Followed by <%= pluralize(@followers, 'person') %></p>
         </div>
       </div>
     </div>
