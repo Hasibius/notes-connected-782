@@ -11,7 +11,8 @@
       <% end %>
     </div>
     <%# space between %>
-    <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
+    <div class="col-md-4 px-3 d-flex flex-column justify-content-between"
+          data-controller="attend">
       <div>
         <p><%= @event.date.strftime('%B %e').upcase %></p>
         <h1><%= @event.title %></h1>
@@ -22,10 +23,16 @@
         <% # if association exists show i dont attend button %>
         <% if @clicked %>
         <%# display inline flex%>
-          <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button d-inline-flex' %>
+          <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button d-inline-flex',
+          data: {action: 'click->attend#destroyAttendance',
+                  attend_target: 'destroy',
+                  id: @event.id } %>
         <% else %>
         <%# display inline flex%>
-          <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button d-inline-flex' %>
+          <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button d-inline-flex',
+          data: {action: 'click->attend#createAttendance',
+                  attend_target: 'create',
+                  id: @event.id } %>
         <% end %>
       </div>
     </div>
