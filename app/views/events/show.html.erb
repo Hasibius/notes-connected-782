@@ -21,9 +21,9 @@
       </div>
       <div class="align-self-center">
         <% # if association exists show i dont attend button %>
+        <p class="text-center<%= " d-none" unless @clicked %>" data-attend-target="going">You are going!</p>
         <% if @clicked %>
         <%# display inline flex%>
-          <p class="text-center" data-attend-target="going">You are going!</p>
           <%= render 'destroy_attendance_button', event: @event %>
         <% else %>
         <%# display inline flex%>

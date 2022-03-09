@@ -45,7 +45,7 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `${num} ${pluralize} going`
     // console.log(this.numberTarget.innerText);
-    this.goingTarget.hidden = false;
+    this.goingTarget.classList.remove('d-none');
   };
 
   destroyAttendance(event) {
@@ -86,6 +86,6 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `${num} ${pluralize} going`
     // console.log(this.numberTarget.innerText);
-    this.goingTarget.hidden = true;
+    this.goingTarget.classList.add('d-none');
   };
 }

@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "create", "destroy", "number" ];
+  static targets = [ "create", "destroy", "number", "following" ];
 
   // connect() {
   //   console.log('object');
@@ -46,6 +46,7 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
     // console.log(this.numberTarget.innerText);
+    this.followingTarget.classList.remove('d-none');
   };
 
   destroyFollow(event) {
@@ -87,5 +88,6 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
     // console.log(this.numberTarget.innerText);
+    this.followingTarget.classList.add('d-none');
   };
 }
