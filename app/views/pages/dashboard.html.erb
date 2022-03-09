@@ -39,7 +39,7 @@
       <% @user.events.each do |event| %>
         <div class="col-3" id="card-product">
           <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
-          <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %l:%M %p') %></a>
+          <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %H:%M') %></a>
           <h2><%= event.title %></h2>
           <div id="location">
             <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
