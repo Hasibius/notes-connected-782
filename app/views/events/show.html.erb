@@ -13,7 +13,6 @@
     <%# space between %>
     <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
       <div>
-        <p><%= @event.date.strftime('%B %e').upcase %></p>
         <h1><%= @event.title %></h1>
         <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
         <p><a href="#map-box"><i class="fas fa-map-marker-alt"> <%= @event.address %></i></a></p>
