@@ -1,0 +1,4 @@
+<%= link_to "I 'm going!", create_attendance_path(event), method: :post, class: 'primary-button d-inline-flex',
+          data: {action: 'click->attend#createAttendance',
+                  attend_target: 'create',
+                  id: event.id } %>
