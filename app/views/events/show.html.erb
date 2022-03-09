@@ -1,4 +1,5 @@
-<div id="top" class="container bg-white">
+<div id="top" class="container bg-white"
+    data-controller="attend">
   <%= link_to :back do %>
     <i class="fas fa-solid fa-angle-left my-3 mx-0 secondary-button"> Back</i>
   <% end %>
@@ -11,9 +12,9 @@
       <% end %>
     </div>
     <%# space between %>
-    <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
+    <div class="col-md-4 px-3 d-flex flex-column justify-content-between"
+          >
       <div>
-        <p><%= @event.date.strftime('%B %e').upcase %></p>
         <h1><%= @event.title %></h1>
         <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
         <p><a href="#map-box"><i class="fas fa-map-marker-alt"> <%= @event.address %></i></a></p>
@@ -22,10 +23,10 @@
         <% # if association exists show i dont attend button %>
         <% if @clicked %>
         <%# display inline flex%>
-          <%= link_to "I won't make it... ☹️", delete_attendance_path(@event), method: :delete, class: 'secondary-button d-inline-flex' %>
+          <%= render 'destroy_attendance_button', event: @event %>
         <% else %>
         <%# display inline flex%>
-          <%= link_to "I 'm going!", create_attendance_path(@event), method: :post, class: 'primary-button d-inline-flex' %>
+          <%= render 'create_attendance_button', event: @event %>
         <% end %>
       </div>
     </div>
@@ -43,7 +44,7 @@
         <p><%= @event.date.strftime('%a, %d.%m.%Y %H:%M') %></p>
       </div>
       <div>
-        <p><%= pluralize(@attendance, 'person')%> going</p>
+        <p data-attend-target="number"><%= pluralize(@attendance, 'person')%> going</p>
       </div>
     </div>
   </div>
