@@ -5,9 +5,9 @@
         <%= cl_image_tag(@user.photo.key, width: 200, height: 200) %>
       <% end %>
     </div>
-    <div class="mr-auto p-3">
-      <h1><%= @user.user_name %></h1>
-      <h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+    <div class="mr-auto p-3 text-white">
+      <h1 class="text-white"><%= @user.user_name %></h1>
+      <h2 class="text-white"><%= "#{@user.first_name} #{@user.last_name}" %></h2>
       <p><%= @user.bio %></p>
       <div class="d-inline-flex justify-content-between w-100">
         <div>
@@ -29,7 +29,7 @@
   </div>
   <br>
 
-  <h2>Hosted events</h2>
+  <h2 class="d-flex justify-content-center text-white">Hosted events</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.events.each do |event| %>
@@ -55,7 +55,7 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><h2>Upcoming</h2>
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><h2 class="text-white">Upcoming</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.attends.each do |attendance| %>
@@ -72,7 +72,7 @@
       <% end %>
     </div>
   </div></div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><h2>Past events</h2>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><h2 class="text-white">Past events</h2>
   <div class="container" id="container-cards">
     <div class="row" id="row-cards">
       <% @user.attends.each do |attendance| %>
@@ -90,6 +90,4 @@
     </div>
   </div>
   </div>
-
-
 </div>
