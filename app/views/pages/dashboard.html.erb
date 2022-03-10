@@ -49,7 +49,10 @@
       <% @user.events.each do |event| %>
         <div class="col-3" id="card-product">
           <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
-          <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %H:%M') %></a>
+            <div class="m-2 d-inline-flex justify-content-between" style="width: 300px">
+              <a id="date"><%= event.date.strftime('%d.%m.%Y')%></a>
+              <a id="date"><%= event.date.strftime('%H:%M')%></a>
+            </div>
           <h2><%= event.title %></h2>
           <div id="location">
             <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
@@ -76,7 +79,10 @@
         <% if Date.current < attendance.date %>
           <div class="col-3" id="card-product">
             <a href="<%= event_path(attendance.id)%>"><%= cl_image_tag attendance.photo.key %></a>
-            <a id="date"><%= attendance.date.strftime('%a, %d.%m.%Y %l:%M %p') %></a>
+            <div class="m-2 d-inline-flex justify-content-between" style="width: 300px">
+              <a id="date"><%= event.date.strftime('%d.%m.%Y')%></a>
+              <a id="date"><%= event.date.strftime('%H:%M')%></a>
+            </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
               <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address %> </a>
@@ -93,7 +99,10 @@
         <% if Date.current > attendance.date %>
           <div class="col-3" id="card-product">
             <a href="<%= event_path(attendance.id)%>"><%= cl_image_tag attendance.photo.key %></a>
-            <a id="date"><%= attendance.date.strftime('%a, %d.%m.%Y %l:%M %p') %></a>
+              <div class="m-2 d-inline-flex justify-content-between" style="width: 300px">
+                <a id="date"><%= event.date.strftime('%d.%m.%Y')%></a>
+                <a id="date"><%= event.date.strftime('%H:%M')%></a>
+              </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
               <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address %> </a>

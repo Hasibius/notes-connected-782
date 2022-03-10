@@ -1,4 +1,4 @@
-<div id="top" class="container bg-white"
+<div id="top" class="container bg-white p-5"
     data-controller="attend">
   <%= link_to :back do %>
     <i class="fas fa-solid fa-angle-left my-3 mx-0 secondary-button"> Back</i>
@@ -6,19 +6,29 @@
 
   <br>
   <div class="row" style="--bs-gutter-x: 0rem !important;">
-    <div class="col-md-8" style="padding: 0 !important;">
+    <div class="col-md-8" id="image-size" style="padding: 0 !important;">
       <% if @event.photo.key %>
         <%= cl_image_tag(@event.photo.key) %>
       <% end %>
     </div>
     <%# space between %>
-    <div class="col-md-4 px-3 d-flex flex-column justify-content-between"
-          >
+    <div class="col-md-4 px-3 d-flex flex-column justify-content-between">
       <div>
         <h1><%= @event.title %></h1>
         <p>from <%= link_to @user.user_name, dashboard_path(@user) %></p>
         <p><a href="#map-box"><i class="fas fa-map-marker-alt"> <%= @event.address %></i></a></p>
       </div>
+
+      <div
+        id ="map-box"
+        class="my-3"
+        style="width: 100%; height: 400px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+
+
       <div class="align-self-center">
         <% # if association exists show i dont attend button %>
         <p class="text-center<%= " d-none" unless @clicked %>" data-attend-target="going">You are going!</p>
@@ -59,25 +69,17 @@
      <div class="m-3">
       <h5><strong><%= comment.user.user_name %></strong></h5>
       <a><%= time_ago_in_words(comment.created_at) %> ago</a>
-      <p class="mb-0"><strong><%= comment.content %></strong></p>
+      <p class="mb-0 text-dark"><%= comment.content %></p>
         <div id>
           <% if current_user == comment.user %>
             <%= link_to "Edit", [comment.event, comment], method: :edit %>
             <%= link_to "Delete", comment_path(comment), method: :delete  %>
           <% end %>
         </div>
+        <hr>
      </div>
       <% end %>
     </div>
   </div>
-
-  <div
-    id ="map-box"
-    class="my-3"
-    style="width: 100%; height: 600px;"
-    data-controller="mapbox"
-    data-mapbox-markers-value="<%= @markers.to_json %>"
-    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <%#= link_to 'Back to top', '#top', class: 'text-center mb-5' %>
+  <%# = link_to 'Back to top', '#top', class: 'text-center mb-5' %>
 </div>
