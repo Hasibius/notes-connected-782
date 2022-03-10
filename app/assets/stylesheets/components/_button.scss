@@ -9,9 +9,9 @@ a {
 
 .primary-button {
   position: relative;
-  border: solid rgb(255, 255, 255) 1.5px;
+  border: solid rgba(255, 255, 255, 0) 1px;
   color: $light-white;
-  background: linear-gradient(180deg, #c3d6f1 0%, #0058CC 100%);
+  background: linear-gradient(180deg, $blue 0%, $dark-blue 100%);
   border-radius: 10px;
   text-decoration: none;
   padding: 0.6em 0.7em 0.6em 0.7em;
