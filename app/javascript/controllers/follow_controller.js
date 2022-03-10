@@ -46,7 +46,7 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
     // console.log(this.numberTarget.innerText);
-    this.followingTarget.classList.remove('d-none');
+    this.followingTarget.classList.remove('hidden');
   };
 
   destroyFollow(event) {
@@ -88,6 +88,6 @@ export default class extends Controller {
     let pluralize = num == 1 ? 'person' : 'people';
     this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
     // console.log(this.numberTarget.innerText);
-    this.followingTarget.classList.add('d-none');
+    this.followingTarget.classList.add('hidden');
   };
 }
