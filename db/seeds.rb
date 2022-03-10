@@ -98,8 +98,15 @@ user.photo.attach(io: file, filename: 'daven-01_swzd9d.jpg', content_type: 'imag
 user.save!
 puts "|#{url}| ✅"
 
-user = User.new(email: "boris_knezevic@email.com", password: "boris_knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Don't mind me, I am just hosting all the events", user_name: "boris_k")
+user = User.new(email: "ajacmar14@home.pl", password: "ajacmar14@home.pl", first_name: "Allan", last_name: "Jacmar", bio: "Don't mind me, I am just hosting all the events", user_name: "ajacmar14")
 url = "https://res.cloudinary.com/dibsi5ltn/image/upload/v1646668549/development/avatars/daven-01_swzd9d.jpg"
+file = URI.open(url)
+user.photo.attach(io: file, filename: 'daven-01_swzd9d.jpg', content_type: 'image/png')
+user.save!
+puts "|#{url}| ✅"
+
+user = User.new(email: "boris_knezevic@email.com", password: "boris_knezevic@email.com", first_name: "Boris", last_name: "Knezevic", bio: "Pianist, Komponist, Web Developer 💻", user_name: "boris_k")
+url = "https://res.cloudinary.com/dibsi5ltn/image/upload/v1646908983/development/avatars/boris-k-01_ihlhl2.jpg"
 file = URI.open(url)
 user.photo.attach(io: file, filename: 'daven-01_swzd9d.jpg', content_type: 'image/png')
 user.save!
@@ -190,6 +197,13 @@ event.save!
 
 event = Event.new(title: "Mega 90er Rave", date: "29.03.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_k"), genre: Genre.find_by(name: "Techno"), address: "Reitknechtstraße 6, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646745949/development/events/90-rave-01_zh8kvh.jpg'
+file = URI.open(url)
+event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
+puts "|#{url}| ✅"
+event.save!
+
+event = Event.new(title: "Merak", date: "01.04.2022, 16:45", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_k"), genre: Genre.find_by(name: "Folk"), address: "Reitknechtstraße 6, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646907955/development/events/trio-merak-01_tnqie9.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
@@ -310,6 +324,13 @@ end
 
 event = Event.find_by(title: "Rock 'n' Roll Party")
 User.all.first(16).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Merak")
+User.all.first(89).each do |usr|
   # p "user |#{usr.user_name}| will attend to Guitar Solo"
   attendance = Attendance.new(user: usr, event: event)
   attendance.save!

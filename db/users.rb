@@ -240,11 +240,11 @@ module Users
     "user_name": "cperkis13",
     "password": "swanKpd"
   }, {
-    "first_name": "Allan",
-    "last_name": "Jacmar",
-    "email": "ajacmar14@home.pl",
-    "user_name": "ajacmar14",
-    "password": "PcboQB"
+    "first_name": "Allans",
+    "last_name": "Jacmars",
+    "email": "ajacmar14@home.pls",
+    "user_name": "ajacmar14s",
+    "password": "ajacmar14@home.pls"
   }, {
     "first_name": "Wally",
     "last_name": "Wylie",
