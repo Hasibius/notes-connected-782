@@ -1,6 +1,9 @@
-<div class="card d-flex">
+<div class="d-flex justify-content-between">
   <% @reviews.each do |review| %>
-    <p><%= review.comment %></p>
-    <a><%= review.score %></a>
+  <div class="card">
+    <a><%= review.reviewer.user_name  %></a>
+    <a><%= review.score %> / 5</a>
+    <p>“<%= review.comment %>”</p>
+  </div>
   <% end %>
 </div>
