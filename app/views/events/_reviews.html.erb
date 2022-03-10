@@ -1,0 +1,13 @@
+<div class="row d-flex justify-content-between ">
+  <% @reviews.each do |review| %>
+  <div class="col-2 card p-2 border border-5">
+      <p class="text-black"><strong><%= review.reviewer.user_name %></strong></p>
+      <p>
+        <% review.score.to_i.times do%>
+        <i class="fas fa-star"></i>
+        <% end %>
+      </p>
+    <p class="d-flex justify-content-start">“<%= review.comment %>„</p>
+  </div>
+  <% end %>
+</div>
