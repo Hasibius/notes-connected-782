@@ -14,5 +14,6 @@ class PagesController < ApplicationController
     end
     @followers = Follow.where(artist: @user).count
     @clicked = Follow.where(artist: @user, follower: current_user).any?
+    @reviews = Review.where(reviewer: @user.id, artist: @user.id)
   end
 end
