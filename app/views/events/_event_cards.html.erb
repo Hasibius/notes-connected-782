@@ -1,16 +1,17 @@
 <div class="container" id="container-cards">
   <div class="row" id="row-cards">
     <% @events.each do |event| %>
-      <div class="col-3" id="card-product">
-        <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
-        <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %H:%M') %></a>
-        <h2><%= event.title %></h2>
-        <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
-
-            <a><i class="fas fa-thin fa-user"></i><%= Attendance.where(event: event.id).count  %></a>
+      <% if Date.current < event.date %>
+        <div class="col-3" id="card-product">
+          <a href="<%= event_path(event)%>"><%= cl_image_tag event.photo.key %></a>
+          <a id="date"><%= event.date.strftime('%a, %d.%m.%Y %H:%M') %></a>
+          <h2><%= event.title %></h2>
+          <div id="location">
+              <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
+              <a><i class="fas fa-thin fa-user"></i><%= Attendance.where(event: event.id).count  %></a>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
