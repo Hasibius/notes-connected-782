@@ -6,7 +6,7 @@
 
   <br>
   <div class="row" style="--bs-gutter-x: 0rem !important;">
-    <div class="col-md-8" style="padding: 0 !important;">
+    <div class="col-md-8" id="image-size" style="padding: 0 !important;">
       <% if @event.photo.key %>
         <%= cl_image_tag(@event.photo.key) %>
       <% end %>
@@ -68,13 +68,14 @@
      <div class="m-3">
       <h5><strong><%= comment.user.user_name %></strong></h5>
       <a><%= time_ago_in_words(comment.created_at) %> ago</a>
-      <p class="mb-0"><strong><%= comment.content %></strong></p>
+      <p class="mb-0 text-dark"><%= comment.content %></p>
         <div id>
           <% if current_user == comment.user %>
             <%= link_to "Edit", [comment.event, comment], method: :edit %>
             <%= link_to "Delete", comment_path(comment), method: :delete  %>
           <% end %>
         </div>
+        <hr>
      </div>
       <% end %>
     </div>
