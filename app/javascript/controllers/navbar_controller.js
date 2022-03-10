@@ -1,22 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    const banner = document.querySelector('.banner')
-    if (banner) {
-      this.element.classList.add("navbar-lewagon-fixed-top");
-    };
-  };
 
   updateNavbar() {
     const banner = document.querySelector('.banner')
-    if (banner) {
-      // set multiplier equal to banner height in vh percentage
-      if (window.scrollY >= (window.innerHeight * 0.6)) {
-        this.element.classList.add("navbar-lewagon-very-dark-blue");
-      } else {
-        this.element.classList.remove("navbar-lewagon-very-dark-blue");
-      }
+    const scrollPercentage = banner ? 0.6 : 0.1;
+
+    if (window.scrollY >= (window.innerHeight * scrollPercentage)) {
+      this.element.classList.add("navbar-lewagon-very-dark-blue");
+    } else {
+      this.element.classList.remove("navbar-lewagon-very-dark-blue");
     }
   };
 }

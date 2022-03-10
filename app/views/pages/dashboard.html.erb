@@ -90,8 +90,8 @@
           <div class="col-3" id="card-product">
             <a href="<%= event_path(attendance.id)%>"><%= cl_image_tag attendance.photo.key %></a>
             <div class="m-2 d-inline-flex justify-content-between" style="width: 300px">
-              <a id="date"><%= event.date.strftime('%d.%m.%Y')%></a>
-              <a id="date"><%= event.date.strftime('%H:%M')%></a>
+              <a id="date"><%= attendance.date.strftime('%d.%m.%Y')%></a>
+              <a id="date"><%= attendance.date.strftime('%H:%M')%></a>
             </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
@@ -110,8 +110,8 @@
           <div class="col-3" id="card-product">
             <a href="<%= event_path(attendance.id)%>"><%= cl_image_tag attendance.photo.key %></a>
               <div class="m-2 d-inline-flex justify-content-between" style="width: 300px">
-                <a id="date"><%= event.date.strftime('%d.%m.%Y')%></a>
-                <a id="date"><%= event.date.strftime('%H:%M')%></a>
+                <a id="date"><%= attendance.date.strftime('%d.%m.%Y')%></a>
+                <a id="date"><%= attendance.date.strftime('%H:%M')%></a>
               </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
