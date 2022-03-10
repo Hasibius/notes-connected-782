@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = [ "create", "destroy", "number", "going" ];
+  static targets = [ "create", "destroy", "number", "following" ];
 
   // connect() {
   //   console.log('object');
   // };
 
-  createAttendance(event) {
+  createFollow(event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -21,17 +21,17 @@ export default class extends Controller {
       headers.append("X-CSRF-Token", csrfToken)
     }
 
-    const url = this.createTarget.pathname
+    const url = `${this.createTarget.dataset.userId}/follows`;
 
-    // console.log(this.createTarget);
+    // console.log(url);
 
     // console.log("Create called.");
-    // call post route for events#create method
+    // call post route for follows#create method
     fetch(url, {
       headers: headers,
       method: 'POST',
       credentials: 'same-origin',
-      body: JSON.stringify({event_id: this.createTarget.dataset.id})
+      body: JSON.stringify({user_id: this.createTarget.dataset.userId})
     })
     .then(response => {
       // console.log(response);
@@ -41,14 +41,15 @@ export default class extends Controller {
       // console.log(data)
       this.createTarget.outerHTML = data
     });
-    const num = parseInt(this.numberTarget.innerText, 10) + 1;
-    let pluralize = num == 1 ? 'person' : 'people';
-    this.numberTarget.innerText = `${num} ${pluralize} going`
     // console.log(this.numberTarget.innerText);
-    this.goingTarget.classList.remove('d-none');
+    const num = parseInt(this.numberTarget.innerText.split(" ")[2], 10) + 1;
+    let pluralize = num == 1 ? 'person' : 'people';
+    this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
+    // console.log(this.numberTarget.innerText);
+    this.followingTarget.classList.remove('d-none');
   };
 
-  destroyAttendance(event) {
+  destroyFollow(event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -65,10 +66,11 @@ export default class extends Controller {
     // console.log(csrfToken);
 
     // console.log("Destroy called."); ${this.destroyTarget.origin}
-    const url = `${this.destroyTarget.pathname}`
+    // :user_id/follows
+    const url = `${this.destroyTarget.dataset.userId}/follows`;
     // console.log(this.destroyTarget);
     // console.log(url);
-    // call delete route for events#destroy method
+    // call delete route for follows#destroy method
     fetch(url, {
       headers: headers,
       method: 'DELETE',
@@ -82,10 +84,10 @@ export default class extends Controller {
       // console.log(data);
       this.destroyTarget.outerHTML = data
     });
-    const num = parseInt(this.numberTarget.innerText, 10) - 1;
+    const num = parseInt(this.numberTarget.innerText.split(" ")[2], 10) - 1;
     let pluralize = num == 1 ? 'person' : 'people';
-    this.numberTarget.innerText = `${num} ${pluralize} going`
+    this.numberTarget.innerText = `Followed by ${num} ${pluralize}`;
     // console.log(this.numberTarget.innerText);
-    this.goingTarget.classList.add('d-none');
+    this.followingTarget.classList.add('d-none');
   };
 }
