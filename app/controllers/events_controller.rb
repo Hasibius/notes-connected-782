@@ -30,6 +30,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @genres = Genre.all.sort
   end
 
   def create
