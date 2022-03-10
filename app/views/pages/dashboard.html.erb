@@ -45,7 +45,9 @@
   <%#-----------REVIEWS-----------%>
   <h2 class="text-white d-flex justify-content-center">Other users reviews</h2>
   <% if @reviews.present? %>
+  <div class="container">
     <%= render "events/reviews"  %>
+  </div>
   <% else %>
     <p class="text-white d-flex justify-content-center"> "No reviews on this user yet" </p>
   <% end %>
