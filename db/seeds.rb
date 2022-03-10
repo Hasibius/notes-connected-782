@@ -224,6 +224,96 @@ User.all.first(57).each do |usr|
   attendance.save!
 end
 
+event = Event.find_by(title: "Geometric Vision")
+User.all.first(46).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "GIRLS Tanz")
+User.all.first(23).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Mega 90er Rave")
+User.all.first(18).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Me & Reas | kult9")
+User.all.first(9).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Notos Quartett")
+User.all.first(33).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Duo Ambarzumjan")
+User.all.first(39).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Buck Roger & The Sidetrackers")
+User.all.first(3).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Three For Silver")
+User.all.first(68).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Jaimi Faulkner")
+User.all.first(40).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Eksotik Meksotik pres. Mitsune")
+User.all.first(27).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Tram des Balkans")
+User.all.first(70).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "90's Party")
+User.all.first(30).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
+
+event = Event.find_by(title: "Rock 'n' Roll Party")
+User.all.first(16).each do |usr|
+  # p "user |#{usr.user_name}| will attend to Guitar Solo"
+  attendance = Attendance.new(user: usr, event: event)
+  attendance.save!
+end
 puts "Done seeding Attendances."
 
 # <--------------------REVIEWS-------------------->
