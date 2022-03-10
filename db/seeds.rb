@@ -188,7 +188,7 @@ event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_
 puts "|#{url}| ✅"
 event.save!
 
-event = Event.new(title: "Mega 90er Rave", date: "29.01.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_k"), genre: Genre.find_by(name: "Techno"), address: "Reitknechtstraße 6, München")
+event = Event.new(title: "Mega 90er Rave", date: "29.03.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "boris_k"), genre: Genre.find_by(name: "Techno"), address: "Reitknechtstraße 6, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646745949/development/events/90-rave-01_zh8kvh.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
@@ -246,7 +246,7 @@ User.all.first(18).each do |usr|
 end
 
 event = Event.find_by(title: "Me & Reas | kult9")
-User.all.first(9).each do |usr|
+User.all.first(49).each do |usr|
   # p "user |#{usr.user_name}| will attend to Guitar Solo"
   attendance = Attendance.new(user: usr, event: event)
   attendance.save!
@@ -260,14 +260,14 @@ User.all.first(33).each do |usr|
 end
 
 event = Event.find_by(title: "Duo Ambarzumjan")
-User.all.first(39).each do |usr|
+User.all.first(12).each do |usr|
   # p "user |#{usr.user_name}| will attend to Guitar Solo"
   attendance = Attendance.new(user: usr, event: event)
   attendance.save!
 end
 
 event = Event.find_by(title: "Buck Roger & The Sidetrackers")
-User.all.first(3).each do |usr|
+User.all.first(33).each do |usr|
   # p "user |#{usr.user_name}| will attend to Guitar Solo"
   attendance = Attendance.new(user: usr, event: event)
   attendance.save!
