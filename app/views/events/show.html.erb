@@ -29,11 +29,11 @@
       </div>
 
 
-      <div>
-        <div id="going-text">
-          <p class="mb-2 mt-2 text-center<%= " d-none" unless @clicked %>" data-attend-target="going">You are going!</p>
+      <div class="d-flex justify-content-between">
+        <div>
+          <p class="mb-2 mt-2 text-center<%= " hidden" unless @clicked %>" data-attend-target="going">You are going!</p>
         </div>
-        <div class="attend-button">
+        <div>
           <% if @clicked %>
             <%= render 'destroy_attendance_button', event: @event %>
           <% else %>
