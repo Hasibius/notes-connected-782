@@ -1,4 +1,4 @@
-<%= link_to "I won't make it... ☹️", delete_attendance_path(event), method: :delete, class: 'secondary-button d-inline-flex',
+<%= link_to "I won't make it...", delete_attendance_path(event), method: :delete, class: 'secondary-button d-inline-flex',
           data: {action: 'click->attend#destroyAttendance',
                   attend_target: 'destroy',
                   id: event.id } %>
