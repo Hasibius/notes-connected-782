@@ -2,3 +2,13 @@
   background-image: url( 'banner-dark-blue-blur.jpg' );
   background-size: cover;
 }
+
+#following-text {
+  width: fit-content;
+  float: inline-end;
+}
+
+.follow-button {
+  width: fit-content;
+  float: inline-start;
+}

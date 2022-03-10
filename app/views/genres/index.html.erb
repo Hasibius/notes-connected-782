@@ -1,10 +1,10 @@
 <h1>Find events by music Genre</h1>
 <%= link_to root_path do %>
-  <i class="fas fa-solid fa-angle-left my-3 btn btn-primary"> Back</i>
+  <i class="fas fa-solid fa-angle-left my-3 secondary-button"> Back</i>
 <% end %>
 <br>
 <% @genres.each do |genre| %>
-  <%= link_to "#{genre.id}. #{genre.name}", genre_path(genre), class: 'btn btn-primary m-3' %>
+  <%= link_to "#{genre.id}. #{genre.name}", genre_path(genre), class: 'primary-button m-3' %>
   <%= "#{genre.id}. #{genre.name}" %>
   <%= cl_image_tag genre.photo.key, height: 300, width: 400, crop: :fill %>
   <br>
