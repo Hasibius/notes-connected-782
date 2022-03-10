@@ -124,19 +124,6 @@ event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_
 puts "|#{url}| ✅"
 event.save!
 
-event = Event.new(title: "90's Party", date: "18.05.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "ajacmar14"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/90s-01_yfhhlz.jpg'
-file = URI.open(url)
-event.photo.attach(io: file, filename: '90s-01_yfhhlz.jpg', content_type: 'image/jpg')
-puts "|#{url}| ✅"
-event.save!
-
-event = Event.new(title: "Rock 'n' Roll Party", date: "06.06.2022, 21:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "ajacmar14"), genre: Genre.find_by(name: "Rock\ And\ Roll"), address: "Dachauer Straße 114, München")
-url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/rock-n-roll-01_xotqod.jpg'
-file = URI.open(url)
-event.photo.attach(io: file, filename: 'rock-n-roll-01_xotqod.jpg', content_type: 'image/jpg')
-puts "|#{url}| ✅"
-event.save!
 
 
 event = Event.new(title: "Tram des Balkans", date: "10.06.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "ajacmar14"), genre: Genre.find_by(name: "Rock"), address: "Einsteinstraße 42, München")
@@ -157,6 +144,20 @@ event = Event.new(title: "Jaimi Faulkner", date: "02.04.2022, 19:00", details: "
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646745950/development/events/jaimi-faulkner-01_wqvzwb.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
+puts "|#{url}| ✅"
+event.save!
+
+event = Event.new(title: "90's Party", date: "18.05.2022, 20:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "ajacmar14"), genre: Genre.find_by(name: "Disco"), address: "Lenbachplatz 1, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/90s-01_yfhhlz.jpg'
+file = URI.open(url)
+event.photo.attach(io: file, filename: '90s-01_yfhhlz.jpg', content_type: 'image/jpg')
+puts "|#{url}| ✅"
+event.save!
+
+event = Event.new(title: "Rock 'n' Roll Party", date: "06.06.2022, 21:00", details: "Est ullamco pariatur quis ipsum.", user: User.find_by(user_name: "ajacmar14"), genre: Genre.find_by(name: "Rock\ And\ Roll"), address: "Dachauer Straße 114, München")
+url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646319268/development/events/rock-n-roll-01_xotqod.jpg'
+file = URI.open(url)
+event.photo.attach(io: file, filename: 'rock-n-roll-01_xotqod.jpg', content_type: 'image/jpg')
 puts "|#{url}| ✅"
 event.save!
 
