@@ -65,7 +65,7 @@
             </div>
           <h2><%= event.title %></h2>
           <div id="location">
-            <a><i class="fas fa-map-marker-alt"></i> <%= event.address %> </a>
+            <a><i class="fas fa-map-marker-alt"></i> <%= event.address.gsub(/,.+/, '') %> </a>
           </div>
         </div>
       <% end %>
@@ -95,7 +95,7 @@
             </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
-              <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address %> </a>
+              <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address.gsub(/,.+/, '') %> </a>
             </div>
           </div>
         <% end %>
@@ -115,7 +115,7 @@
               </div>
             <h2><%= attendance.title %></h2>
             <div id="location">
-              <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address %> </a>
+              <a><i class="fas fa-map-marker-alt"></i> <%= attendance.address.gsub(/,.+/, '') %> </a>
             </div>
           </div>
         <% end %>
