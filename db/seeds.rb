@@ -117,7 +117,7 @@ puts "Done seeding Users."
 # <--------------------EVENTS-------------------->
 
 puts 'Seeding Events...'
-event = Event.new(title: "Guitar Solo", date: "11.03.2022, 18:30", details: "For those who like Instrumental music they can join me and enjoy. Feel free to grab your own drinks! \nSee you there! 😃", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Instrumental"), address: "Heßstraße 132, München")
+event = Event.new(title: "Guitar Solo", date: "12.03.2022, 18:30", details: "For those who like Instrumental music they can join me and enjoy. Feel free to grab your own drinks! \nSee you there! 😃", user: User.find_by(user_name: "daven"), genre: Genre.find_by(name: "Instrumental"), address: "Heßstraße 132, München")
 url = 'https://res.cloudinary.com/dibsi5ltn/image/upload/v1646666786/development/events/acoustic-guitar-01_w7pyrr.jpg'
 file = URI.open(url)
 event.photo.attach(io: file, filename: 'acoustic-guitar-01_w7pyrr.jpg', content_type: 'image/jpg')
