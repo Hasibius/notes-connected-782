@@ -1,0 +1,2 @@
+class MahirController < ApplicationController
+end
